@@ -2,7 +2,7 @@
 
 # Monitoring — operations
 
-Accessor: `client.monitoring` · Source: `firecrawl_api/apis/monitoring.py` · 8 operations
+Accessor: `client.monitoring` · Source: `firecrawl/apis/monitoring.py` · 8 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -19,10 +19,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `MonitorCreateRequest` | `firecrawl_api/models/monitor_create_request.py` |
-| `MonitorCreateRequestDict` | `firecrawl_api/models/monitor_create_request.py` |
-| `MonitorResponse` | `firecrawl_api/models/monitor_response.py` |
-| `CreateMonitorErrorBody` | `firecrawl_api/errors/create_monitor_error.py` |
+| `MonitorCreateRequest` | `firecrawl/models/monitor_create_request.py` |
+| `MonitorCreateRequestDict` | `firecrawl/models/monitor_create_request.py` |
+| `MonitorResponse` | `firecrawl/models/monitor_response.py` |
+| `CreateMonitorErrorBody` | `firecrawl/errors/create_monitor_error.py` |
 
 ### client.monitoring.delete_monitor
 
@@ -37,8 +37,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SuccessResponse` | `firecrawl_api/models/success_response.py` |
-| `DeleteMonitorErrorBody` | `firecrawl_api/errors/delete_monitor_error.py` |
+| `SuccessResponse` | `firecrawl/models/success_response.py` |
+| `DeleteMonitorErrorBody` | `firecrawl/errors/delete_monitor_error.py` |
 
 ### client.monitoring.get_monitor
 
@@ -53,8 +53,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `MonitorResponse` | `firecrawl_api/models/monitor_response.py` |
-| `GetMonitorErrorBody` | `firecrawl_api/errors/get_monitor_error.py` |
+| `MonitorResponse` | `firecrawl/models/monitor_response.py` |
+| `GetMonitorErrorBody` | `firecrawl/errors/get_monitor_error.py` |
 
 ### client.monitoring.get_monitor_check
 
@@ -69,9 +69,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Status3OrStr` | `firecrawl_api/models/enums/status3.py` |
-| `MonitorCheckDetailResponse` | `firecrawl_api/models/monitor_check_detail_response.py` |
-| `GetMonitorCheckErrorBody` | `firecrawl_api/errors/get_monitor_check_error.py` |
+| `Status3OrStr` | `firecrawl/models/enums/status3.py` |
+| `MonitorCheckDetailResponse` | `firecrawl/models/monitor_check_detail_response.py` |
+| `GetMonitorCheckErrorBody` | `firecrawl/errors/get_monitor_check_error.py` |
 
 ### client.monitoring.list_monitor_checks
 
@@ -85,8 +85,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Status2OrStr` | `firecrawl_api/models/enums/status2.py` |
-| `MonitorCheckListResponse` | `firecrawl_api/models/monitor_check_list_response.py` |
+| `Status2OrStr` | `firecrawl/models/enums/status2.py` |
+| `MonitorCheckListResponse` | `firecrawl/models/monitor_check_list_response.py` |
 
 ### client.monitoring.list_monitors
 
@@ -99,7 +99,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `MonitorListResponse` | `firecrawl_api/models/monitor_list_response.py` |
+| `MonitorListResponse` | `firecrawl/models/monitor_list_response.py` |
 
 ### client.monitoring.run_monitor
 
@@ -114,8 +114,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `MonitorRunResponse` | `firecrawl_api/models/monitor_run_response.py` |
-| `RunMonitorErrorBody` | `firecrawl_api/errors/run_monitor_error.py` |
+| `MonitorRunResponse` | `firecrawl/models/monitor_run_response.py` |
+| `RunMonitorErrorBody` | `firecrawl/errors/run_monitor_error.py` |
 
 ### client.monitoring.update_monitor
 
@@ -130,8 +130,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `MonitorUpdateRequest` | `firecrawl_api/models/monitor_update_request.py` |
-| `MonitorUpdateRequestDict` | `firecrawl_api/models/monitor_update_request.py` |
-| `MonitorResponse` | `firecrawl_api/models/monitor_response.py` |
-| `UpdateMonitorErrorBody` | `firecrawl_api/errors/update_monitor_error.py` |
+| `MonitorUpdateRequest` | `firecrawl/models/monitor_update_request.py` |
+| `MonitorUpdateRequestDict` | `firecrawl/models/monitor_update_request.py` |
+| `MonitorResponse` | `firecrawl/models/monitor_response.py` |
+| `UpdateMonitorErrorBody` | `firecrawl/errors/update_monitor_error.py` |
 

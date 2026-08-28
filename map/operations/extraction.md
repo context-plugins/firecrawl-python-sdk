@@ -2,7 +2,7 @@
 
 # Extraction — operations
 
-Accessor: `client.extraction` · Source: `firecrawl_api/apis/extraction.py` · 2 operations
+Accessor: `client.extraction` · Source: `firecrawl/apis/extraction.py` · 2 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -19,12 +19,12 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ExtractRequest` | `firecrawl_api/models/extract_request.py` |
-| `ExtractRequestDict` | `firecrawl_api/models/extract_request.py` |
-| `ExtractResponse` | `firecrawl_api/models/extract_response.py` |
-| `ExtractDataErrorBody` | `firecrawl_api/errors/extract_data_error.py` |
-| `Extract400Error1` | `firecrawl_api/models/extract400_error1.py` |
-| `Extract500Error1` | `firecrawl_api/models/extract500_error1.py` |
+| `ExtractRequest` | `firecrawl/models/extract_request.py` |
+| `ExtractRequestDict` | `firecrawl/models/extract_request.py` |
+| `ExtractResponse` | `firecrawl/models/extract_response.py` |
+| `ExtractDataErrorBody` | `firecrawl/errors/extract_data_error.py` |
+| `Extract400Error1` | `firecrawl/models/extract400_error1.py` |
+| `Extract500Error1` | `firecrawl/models/extract500_error1.py` |
 
 ### client.extraction.get_extract_status
 
@@ -38,5 +38,5 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ExtractStatusResponse` | `firecrawl_api/models/extract_status_response.py` |
+| `ExtractStatusResponse` | `firecrawl/models/extract_status_response.py` |
 

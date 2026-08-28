@@ -2,11 +2,11 @@
 
 **Raw** endpoints, reached through `with_raw_response`, return `ApiResult[T, E]` and never raise for an API error. For the parsed endpoints, see [API Reference](api-reference.md).
 
-> Source: [FirecrawlApiClient](firecrawl_api/client.py)
+> Source: [FirecrawlClient](firecrawl/client.py)
 
 ## Account
 
-> Source: [Account](firecrawl_api/apis/account.py)
+> Source: [Account](firecrawl/apis/account.py)
 
 <details>
 <summary><code>def get_activity(*, endpoint: Endpoint1OrStr | None = None, limit: int | None = 50, cursor: str | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TeamActivityResponse, RawError]</code></summary>
@@ -61,10 +61,10 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>endpoint</code> | <code>[Endpoint1OrStr](firecrawl_api/models/enums/endpoint1.py) \| None</code> | Filter by endpoint<br>**Default**: <code>None</code> |
+| <code>endpoint</code> | <code>[Endpoint1OrStr](firecrawl/models/enums/endpoint1.py) \| None</code> | Filter by endpoint<br>**Default**: <code>None</code> |
 | <code>limit</code> | <code>int \| None</code> | Maximum number of results per page<br>**Default**: <code>50</code> |
 | <code>cursor</code> | <code>str \| None</code> | Cursor for pagination. Use the cursor value from the previous response.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -74,11 +74,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[TeamActivityResponse](firecrawl_api/models/team_activity_response.py), [RawError](firecrawl_api/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[TeamActivityResponse](firecrawl/models/team_activity_response.py), [RawError](firecrawl/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TeamActivityResponse](firecrawl_api/models/team_activity_response.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[TeamActivityResponse](firecrawl/models/team_activity_response.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[RawError](firecrawl_api/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](firecrawl/core/results.py)</code>
 
 </dd>
 </dl>
@@ -90,7 +90,7 @@ match result:
 
 ## Agent
 
-> Source: [Agent](firecrawl_api/apis/agent.py)
+> Source: [Agent](firecrawl/apis/agent.py)
 
 <details>
 <summary><code>def cancel_agent(job_id: UUID, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[SuccessResponse, RawError]</code></summary>
@@ -146,7 +146,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>job_id</code> | <code>UUID</code> | The ID of the agent job |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -156,11 +156,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[SuccessResponse](firecrawl_api/models/success_response.py), [RawError](firecrawl_api/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[SuccessResponse](firecrawl/models/success_response.py), [RawError](firecrawl/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SuccessResponse](firecrawl_api/models/success_response.py)</code> -- Agent job cancelled successfully
+**On `Success`**: `payload` is <code>[SuccessResponse](firecrawl/models/success_response.py)</code> -- Agent job cancelled successfully
 
-**On `Failure`**: `error` is <code>[RawError](firecrawl_api/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](firecrawl/core/results.py)</code>
 
 </dd>
 </dl>
@@ -224,7 +224,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>job_id</code> | <code>UUID</code> | The ID of the agent job |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -234,11 +234,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[AgentResponse1](firecrawl_api/models/agent_response1.py), [RawError](firecrawl_api/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[AgentResponse1](firecrawl/models/agent_response1.py), [RawError](firecrawl/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AgentResponse1](firecrawl_api/models/agent_response1.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[AgentResponse1](firecrawl/models/agent_response1.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[RawError](firecrawl_api/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](firecrawl/core/results.py)</code>
 
 </dd>
 </dl>
@@ -301,8 +301,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[AgentRequest](firecrawl_api/models/agent_request.py) \| [AgentRequestDict](firecrawl_api/models/agent_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[AgentRequest](firecrawl/models/agent_request.py) \| [AgentRequestDict](firecrawl/models/agent_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -312,19 +312,19 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[AgentResponse](firecrawl_api/models/agent_response.py), [StartAgentErrorBody](firecrawl_api/errors/start_agent_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[AgentResponse](firecrawl/models/agent_response.py), [StartAgentErrorBody](firecrawl/errors/start_agent_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[AgentResponse](firecrawl_api/models/agent_response.py)</code> -- Agent task started successfully
+**On `Success`**: `payload` is <code>[AgentResponse](firecrawl/models/agent_response.py)</code> -- Agent task started successfully
 
-**On `Failure`**: `error` is <code>[StartAgentErrorBody](firecrawl_api/errors/start_agent_error.py)</code>
+**On `Failure`**: `error` is <code>[StartAgentErrorBody](firecrawl/errors/start_agent_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 402 | <code>[Agent402Error1](firecrawl_api/models/agent402_error1.py)</code> |
-| 429 | <code>[Agent429Error1](firecrawl_api/models/agent429_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 402 | <code>[Agent402Error1](firecrawl/models/agent402_error1.py)</code> |
+| 429 | <code>[Agent429Error1](firecrawl/models/agent429_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -336,7 +336,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## Billing
 
-> Source: [Billing](firecrawl_api/apis/billing.py)
+> Source: [Billing](firecrawl/apis/billing.py)
 
 <details>
 <summary><code>def get_credit_usage(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TeamCreditUsageResponse, GetCreditUsageErrorBody]</code></summary>
@@ -391,7 +391,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -401,19 +401,19 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[TeamCreditUsageResponse](firecrawl_api/models/team_credit_usage_response.py), [GetCreditUsageErrorBody](firecrawl_api/errors/get_credit_usage_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[TeamCreditUsageResponse](firecrawl/models/team_credit_usage_response.py), [GetCreditUsageErrorBody](firecrawl/errors/get_credit_usage_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TeamCreditUsageResponse](firecrawl_api/models/team_credit_usage_response.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[TeamCreditUsageResponse](firecrawl/models/team_credit_usage_response.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[GetCreditUsageErrorBody](firecrawl_api/errors/get_credit_usage_error.py)</code>
+**On `Failure`**: `error` is <code>[GetCreditUsageErrorBody](firecrawl/errors/get_credit_usage_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 404 | <code>[TeamCreditUsage404Error1](firecrawl_api/models/team_credit_usage404_error1.py)</code> |
-| 500 | <code>[TeamCreditUsage500Error1](firecrawl_api/models/team_credit_usage500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 404 | <code>[TeamCreditUsage404Error1](firecrawl/models/team_credit_usage404_error1.py)</code> |
+| 500 | <code>[TeamCreditUsage500Error1](firecrawl/models/team_credit_usage500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -477,7 +477,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>by_api_key</code> | <code>bool \| None</code> | Get historical credit usage by API key<br>**Default**: <code>False</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -487,18 +487,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[TeamCreditUsageHistoricalResponse](firecrawl_api/models/team_credit_usage_historical_response.py), [GetHistoricalCreditUsageErrorBody](firecrawl_api/errors/get_historical_credit_usage_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[TeamCreditUsageHistoricalResponse](firecrawl/models/team_credit_usage_historical_response.py), [GetHistoricalCreditUsageErrorBody](firecrawl/errors/get_historical_credit_usage_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TeamCreditUsageHistoricalResponse](firecrawl_api/models/team_credit_usage_historical_response.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[TeamCreditUsageHistoricalResponse](firecrawl/models/team_credit_usage_historical_response.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[GetHistoricalCreditUsageErrorBody](firecrawl_api/errors/get_historical_credit_usage_error.py)</code>
+**On `Failure`**: `error` is <code>[GetHistoricalCreditUsageErrorBody](firecrawl/errors/get_historical_credit_usage_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 500 | <code>[TeamCreditUsageHistorical500Error1](firecrawl_api/models/team_credit_usage_historical500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 500 | <code>[TeamCreditUsageHistorical500Error1](firecrawl/models/team_credit_usage_historical500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -562,7 +562,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>by_api_key</code> | <code>bool \| None</code> | Get historical token usage by API key<br>**Default**: <code>False</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -572,18 +572,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[TeamTokenUsageHistoricalResponse](firecrawl_api/models/team_token_usage_historical_response.py), [GetHistoricalTokenUsageErrorBody](firecrawl_api/errors/get_historical_token_usage_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[TeamTokenUsageHistoricalResponse](firecrawl/models/team_token_usage_historical_response.py), [GetHistoricalTokenUsageErrorBody](firecrawl/errors/get_historical_token_usage_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TeamTokenUsageHistoricalResponse](firecrawl_api/models/team_token_usage_historical_response.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[TeamTokenUsageHistoricalResponse](firecrawl/models/team_token_usage_historical_response.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[GetHistoricalTokenUsageErrorBody](firecrawl_api/errors/get_historical_token_usage_error.py)</code>
+**On `Failure`**: `error` is <code>[GetHistoricalTokenUsageErrorBody](firecrawl/errors/get_historical_token_usage_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 500 | <code>[TeamTokenUsageHistorical500Error1](firecrawl_api/models/team_token_usage_historical500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 500 | <code>[TeamTokenUsageHistorical500Error1](firecrawl/models/team_token_usage_historical500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -646,7 +646,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -656,19 +656,19 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[TeamTokenUsageResponse](firecrawl_api/models/team_token_usage_response.py), [GetTokenUsageErrorBody](firecrawl_api/errors/get_token_usage_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[TeamTokenUsageResponse](firecrawl/models/team_token_usage_response.py), [GetTokenUsageErrorBody](firecrawl/errors/get_token_usage_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TeamTokenUsageResponse](firecrawl_api/models/team_token_usage_response.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[TeamTokenUsageResponse](firecrawl/models/team_token_usage_response.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[GetTokenUsageErrorBody](firecrawl_api/errors/get_token_usage_error.py)</code>
+**On `Failure`**: `error` is <code>[GetTokenUsageErrorBody](firecrawl/errors/get_token_usage_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 404 | <code>[TeamTokenUsage404Error1](firecrawl_api/models/team_token_usage404_error1.py)</code> |
-| 500 | <code>[TeamTokenUsage500Error1](firecrawl_api/models/team_token_usage500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 404 | <code>[TeamTokenUsage404Error1](firecrawl/models/team_token_usage404_error1.py)</code> |
+| 500 | <code>[TeamTokenUsage500Error1](firecrawl/models/team_token_usage500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -680,7 +680,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## Crawling
 
-> Source: [Crawling](firecrawl_api/apis/crawling.py)
+> Source: [Crawling](firecrawl/apis/crawling.py)
 
 <details>
 <summary><code>def cancel_crawl(id: UUID, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[CrawlResponse1, CancelCrawlErrorBody]</code></summary>
@@ -736,7 +736,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>UUID</code> | The ID of the crawl job |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -746,19 +746,19 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[CrawlResponse1](firecrawl_api/models/crawl_response1.py), [CancelCrawlErrorBody](firecrawl_api/errors/cancel_crawl_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[CrawlResponse1](firecrawl/models/crawl_response1.py), [CancelCrawlErrorBody](firecrawl/errors/cancel_crawl_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CrawlResponse1](firecrawl_api/models/crawl_response1.py)</code> -- Successful cancellation
+**On `Success`**: `payload` is <code>[CrawlResponse1](firecrawl/models/crawl_response1.py)</code> -- Successful cancellation
 
-**On `Failure`**: `error` is <code>[CancelCrawlErrorBody](firecrawl_api/errors/cancel_crawl_error.py)</code>
+**On `Failure`**: `error` is <code>[CancelCrawlErrorBody](firecrawl/errors/cancel_crawl_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 404 | <code>[Crawl404Error1](firecrawl_api/models/crawl404_error1.py)</code> |
-| 500 | <code>[Crawl500Error1](firecrawl_api/models/crawl500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 404 | <code>[Crawl404Error1](firecrawl/models/crawl404_error1.py)</code> |
+| 500 | <code>[Crawl500Error1](firecrawl/models/crawl500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -821,8 +821,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[CrawlParamsPreviewRequest](firecrawl_api/models/crawl_params_preview_request.py) \| [CrawlParamsPreviewRequestDict](firecrawl_api/models/crawl_params_preview_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[CrawlParamsPreviewRequest](firecrawl/models/crawl_params_preview_request.py) \| [CrawlParamsPreviewRequestDict](firecrawl/models/crawl_params_preview_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -832,20 +832,20 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[CrawlParamsPreviewResponse](firecrawl_api/models/crawl_params_preview_response.py), [CrawlParamsPreviewErrorBody](firecrawl_api/errors/crawl_params_preview_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[CrawlParamsPreviewResponse](firecrawl/models/crawl_params_preview_response.py), [CrawlParamsPreviewErrorBody](firecrawl/errors/crawl_params_preview_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CrawlParamsPreviewResponse](firecrawl_api/models/crawl_params_preview_response.py)</code> -- Successful response with generated crawl parameters
+**On `Success`**: `payload` is <code>[CrawlParamsPreviewResponse](firecrawl/models/crawl_params_preview_response.py)</code> -- Successful response with generated crawl parameters
 
-**On `Failure`**: `error` is <code>[CrawlParamsPreviewErrorBody](firecrawl_api/errors/crawl_params_preview_error.py)</code>
+**On `Failure`**: `error` is <code>[CrawlParamsPreviewErrorBody](firecrawl/errors/crawl_params_preview_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400 | <code>[CrawlParamsPreview400Error1](firecrawl_api/models/crawl_params_preview400_error1.py)</code> |
-| 401 | <code>[CrawlParamsPreview401Error1](firecrawl_api/models/crawl_params_preview401_error1.py)</code> |
-| 500 | <code>[CrawlParamsPreview500Error1](firecrawl_api/models/crawl_params_preview500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 400 | <code>[CrawlParamsPreview400Error1](firecrawl/models/crawl_params_preview400_error1.py)</code> |
+| 401 | <code>[CrawlParamsPreview401Error1](firecrawl/models/crawl_params_preview401_error1.py)</code> |
+| 500 | <code>[CrawlParamsPreview500Error1](firecrawl/models/crawl_params_preview500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -908,8 +908,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[CrawlRequest](firecrawl_api/models/crawl_request.py) \| [CrawlRequestDict](firecrawl_api/models/crawl_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[CrawlRequest](firecrawl/models/crawl_request.py) \| [CrawlRequestDict](firecrawl/models/crawl_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -919,20 +919,20 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[CrawlResponse](firecrawl_api/models/crawl_response.py), [CrawlUrlsErrorBody](firecrawl_api/errors/crawl_urls_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[CrawlResponse](firecrawl/models/crawl_response.py), [CrawlUrlsErrorBody](firecrawl/errors/crawl_urls_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CrawlResponse](firecrawl_api/models/crawl_response.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[CrawlResponse](firecrawl/models/crawl_response.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[CrawlUrlsErrorBody](firecrawl_api/errors/crawl_urls_error.py)</code>
+**On `Failure`**: `error` is <code>[CrawlUrlsErrorBody](firecrawl/errors/crawl_urls_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 402 | <code>[Crawl402Error1](firecrawl_api/models/crawl402_error1.py)</code> |
-| 429 | <code>[Crawl429Error1](firecrawl_api/models/crawl429_error1.py)</code> |
-| 500 | <code>[Crawl500Error1](firecrawl_api/models/crawl500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 402 | <code>[Crawl402Error1](firecrawl/models/crawl402_error1.py)</code> |
+| 429 | <code>[Crawl429Error1](firecrawl/models/crawl429_error1.py)</code> |
+| 500 | <code>[Crawl500Error1](firecrawl/models/crawl500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -995,7 +995,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1005,20 +1005,20 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[CrawlActiveResponse](firecrawl_api/models/crawl_active_response.py), [GetActiveCrawlsErrorBody](firecrawl_api/errors/get_active_crawls_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[CrawlActiveResponse](firecrawl/models/crawl_active_response.py), [GetActiveCrawlsErrorBody](firecrawl/errors/get_active_crawls_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CrawlActiveResponse](firecrawl_api/models/crawl_active_response.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[CrawlActiveResponse](firecrawl/models/crawl_active_response.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[GetActiveCrawlsErrorBody](firecrawl_api/errors/get_active_crawls_error.py)</code>
+**On `Failure`**: `error` is <code>[GetActiveCrawlsErrorBody](firecrawl/errors/get_active_crawls_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 402 | <code>[CrawlActive402Error1](firecrawl_api/models/crawl_active402_error1.py)</code> |
-| 429 | <code>[CrawlActive429Error1](firecrawl_api/models/crawl_active429_error1.py)</code> |
-| 500 | <code>[CrawlActive500Error1](firecrawl_api/models/crawl_active500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 402 | <code>[CrawlActive402Error1](firecrawl/models/crawl_active402_error1.py)</code> |
+| 429 | <code>[CrawlActive429Error1](firecrawl/models/crawl_active429_error1.py)</code> |
+| 500 | <code>[CrawlActive500Error1](firecrawl/models/crawl_active500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -1082,7 +1082,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>UUID</code> | The ID of the crawl job |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1092,20 +1092,20 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[CrawlErrorsResponseObj](firecrawl_api/models/crawl_errors_response_obj.py), [GetCrawlErrorsErrorBody](firecrawl_api/errors/get_crawl_errors_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[CrawlErrorsResponseObj](firecrawl/models/crawl_errors_response_obj.py), [GetCrawlErrorsErrorBody](firecrawl/errors/get_crawl_errors_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CrawlErrorsResponseObj](firecrawl_api/models/crawl_errors_response_obj.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[CrawlErrorsResponseObj](firecrawl/models/crawl_errors_response_obj.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[GetCrawlErrorsErrorBody](firecrawl_api/errors/get_crawl_errors_error.py)</code>
+**On `Failure`**: `error` is <code>[GetCrawlErrorsErrorBody](firecrawl/errors/get_crawl_errors_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 402 | <code>[CrawlErrors402Error1](firecrawl_api/models/crawl_errors402_error1.py)</code> |
-| 429 | <code>[CrawlErrors429Error1](firecrawl_api/models/crawl_errors429_error1.py)</code> |
-| 500 | <code>[CrawlErrors500Error1](firecrawl_api/models/crawl_errors500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 402 | <code>[CrawlErrors402Error1](firecrawl/models/crawl_errors402_error1.py)</code> |
+| 429 | <code>[CrawlErrors429Error1](firecrawl/models/crawl_errors429_error1.py)</code> |
+| 500 | <code>[CrawlErrors500Error1](firecrawl/models/crawl_errors500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -1169,7 +1169,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>UUID</code> | The ID of the crawl job |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1179,20 +1179,20 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[CrawlStatusResponseObj](firecrawl_api/models/crawl_status_response_obj.py), [GetCrawlStatusErrorBody](firecrawl_api/errors/get_crawl_status_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[CrawlStatusResponseObj](firecrawl/models/crawl_status_response_obj.py), [GetCrawlStatusErrorBody](firecrawl/errors/get_crawl_status_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CrawlStatusResponseObj](firecrawl_api/models/crawl_status_response_obj.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[CrawlStatusResponseObj](firecrawl/models/crawl_status_response_obj.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[GetCrawlStatusErrorBody](firecrawl_api/errors/get_crawl_status_error.py)</code>
+**On `Failure`**: `error` is <code>[GetCrawlStatusErrorBody](firecrawl/errors/get_crawl_status_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 402 | <code>[Crawl402Error1](firecrawl_api/models/crawl402_error1.py)</code> |
-| 429 | <code>[Crawl429Error1](firecrawl_api/models/crawl429_error1.py)</code> |
-| 500 | <code>[Crawl500Error1](firecrawl_api/models/crawl500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 402 | <code>[Crawl402Error1](firecrawl/models/crawl402_error1.py)</code> |
+| 429 | <code>[Crawl429Error1](firecrawl/models/crawl429_error1.py)</code> |
+| 500 | <code>[Crawl500Error1](firecrawl/models/crawl500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -1204,7 +1204,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## Developer
 
-> Source: [Developer](firecrawl_api/apis/developer.py)
+> Source: [Developer](firecrawl/apis/developer.py)
 
 <details>
 <summary><code>def developer_search(query: str, *, k: int | None = 10, types: list[Types1OrStr] | None = None, repos: list[str] | None = None, sources: list[str] | None = None, skills: SkillsOrStr | None = None, passages: int | None = 1, language: str | None = None, topic: str | None = None, license: str | None = None, min_stars: int | None = None, max_stars: int | None = None, archived: bool | None = None, fork: bool | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[DeveloperSearchResponse, DeveloperSearchErrorBody]</code></summary>
@@ -1261,10 +1261,10 @@ match result:
 | --- | --- | --- |
 | <code>query</code> | <code>str</code> | Natural-language question or search phrase. |
 | <code>k</code> | <code>int \| None</code> | Number of ranked results to return.<br>**Default**: <code>10</code> |
-| <code>types</code> | <code>list&#91;[Types1OrStr](firecrawl_api/models/enums/types1.py)&#93; \| None</code> | Result kinds to search. Defaults to all four. Accepts a repeated parameter (`types=issue&types=pull_request`) or one comma-separated value (`types=issue,pull_request`).<br>**Default**: <code>None</code> |
+| <code>types</code> | <code>list&#91;[Types1OrStr](firecrawl/models/enums/types1.py)&#93; \| None</code> | Result kinds to search. Defaults to all four. Accepts a repeated parameter (`types=issue&types=pull_request`) or one comma-separated value (`types=issue,pull_request`).<br>**Default**: <code>None</code> |
 | <code>repos</code> | <code>list&#91;str&#93; \| None</code> | Repository slugs to scope the repository half of the index to, such as `firecrawl/firecrawl`. Applies to the `issue`, `pull_request`, and `readme` types only. Sent together with `sources`, the two halves are combined rather than intersected, so matching results come back from either. Returns 400 when no repository type is in `types`, reporting that `repos` cannot match any requested type and that you should add repository types or drop `repos`.<br>**Default**: <code>None</code> |
 | <code>sources</code> | <code>list&#91;str&#93; \| None</code> | Documentation source ids to scope the documentation half to, at most 20. Applies to the `doc` type only. Not a fixed enum: ids reflect the documentation sites in the index and the set grows over time, so confirm an id resolves by sending it and reading the `sources` array on the response. Returns 400 with `sources cannot match any requested type; add doc or drop sources` when `doc` is not in `types`.<br>**Default**: <code>None</code> |
-| <code>skills</code> | <code>[SkillsOrStr](firecrawl_api/models/enums/skills.py) \| None</code> | Set to `only` to limit the search to indexed agent-skill files.<br>**Default**: <code>None</code> |
+| <code>skills</code> | <code>[SkillsOrStr](firecrawl/models/enums/skills.py) \| None</code> | Set to `only` to limit the search to indexed agent-skill files.<br>**Default**: <code>None</code> |
 | <code>passages</code> | <code>int \| None</code> | Matched passages to return per result.<br>**Default**: <code>1</code> |
 | <code>language</code> | <code>str \| None</code> | Repository primary language, such as `Rust`. Applies to repository results only; sending it with no `sources` scope returns no `doc` results. See [how the repository filters scope a search](/api-reference/endpoint/developer-search#how-the-repository-filters-scope-a-search).<br>**Default**: <code>None</code> |
 | <code>topic</code> | <code>str \| None</code> | Repository topic, such as `async`. Applies to repository results only; sending it with no `sources` scope returns no `doc` results.<br>**Default**: <code>None</code> |
@@ -1273,7 +1273,7 @@ match result:
 | <code>max_stars</code> | <code>int \| None</code> | Upper bound on repository stars. Applies to repository results only; sending it with no `sources` scope returns no `doc` results.<br>**Default**: <code>None</code> |
 | <code>archived</code> | <code>bool \| None</code> | Include or exclude archived repositories. Applies to repository results only; sending it with no `sources` scope returns no `doc` results.<br>**Default**: <code>None</code> |
 | <code>fork</code> | <code>bool \| None</code> | Include or exclude forks. Applies to repository results only; sending it with no `sources` scope returns no `doc` results.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1283,18 +1283,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[DeveloperSearchResponse](firecrawl_api/models/developer_search_response.py), [DeveloperSearchErrorBody](firecrawl_api/errors/developer_search_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[DeveloperSearchResponse](firecrawl/models/developer_search_response.py), [DeveloperSearchErrorBody](firecrawl/errors/developer_search_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[DeveloperSearchResponse](firecrawl_api/models/developer_search_response.py)</code> -- Ranked developer results with matched passages.
+**On `Success`**: `payload` is <code>[DeveloperSearchResponse](firecrawl/models/developer_search_response.py)</code> -- Ranked developer results with matched passages.
 
-**On `Failure`**: `error` is <code>[DeveloperSearchErrorBody](firecrawl_api/errors/developer_search_error.py)</code>
+**On `Failure`**: `error` is <code>[DeveloperSearchErrorBody](firecrawl/errors/developer_search_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 429, 500 | <code>[RawError](firecrawl_api/core/results.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 400, 401, 429, 500 | <code>[RawError](firecrawl/core/results.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -1357,8 +1357,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[SearchDeveloperRequest](firecrawl_api/models/search_developer_request.py) \| [SearchDeveloperRequestDict](firecrawl_api/models/search_developer_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[SearchDeveloperRequest](firecrawl/models/search_developer_request.py) \| [SearchDeveloperRequestDict](firecrawl/models/search_developer_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1368,18 +1368,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[DeveloperSearchResponse](firecrawl_api/models/developer_search_response.py), [DeveloperSearchPostErrorBody](firecrawl_api/errors/developer_search_post_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[DeveloperSearchResponse](firecrawl/models/developer_search_response.py), [DeveloperSearchPostErrorBody](firecrawl/errors/developer_search_post_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[DeveloperSearchResponse](firecrawl_api/models/developer_search_response.py)</code> -- Ranked developer results with matched passages.
+**On `Success`**: `payload` is <code>[DeveloperSearchResponse](firecrawl/models/developer_search_response.py)</code> -- Ranked developer results with matched passages.
 
-**On `Failure`**: `error` is <code>[DeveloperSearchPostErrorBody](firecrawl_api/errors/developer_search_post_error.py)</code>
+**On `Failure`**: `error` is <code>[DeveloperSearchPostErrorBody](firecrawl/errors/developer_search_post_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 429, 500 | <code>[RawError](firecrawl_api/core/results.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 400, 401, 429, 500 | <code>[RawError](firecrawl/core/results.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -1391,7 +1391,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## Extraction
 
-> Source: [Extraction](firecrawl_api/apis/extraction.py)
+> Source: [Extraction](firecrawl/apis/extraction.py)
 
 <details>
 <summary><code>def extract_data(body: ExtractRequest | ExtractRequestDict, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[ExtractResponse, ExtractDataErrorBody]</code></summary>
@@ -1446,8 +1446,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[ExtractRequest](firecrawl_api/models/extract_request.py) \| [ExtractRequestDict](firecrawl_api/models/extract_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[ExtractRequest](firecrawl/models/extract_request.py) \| [ExtractRequestDict](firecrawl/models/extract_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1457,19 +1457,19 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[ExtractResponse](firecrawl_api/models/extract_response.py), [ExtractDataErrorBody](firecrawl_api/errors/extract_data_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[ExtractResponse](firecrawl/models/extract_response.py), [ExtractDataErrorBody](firecrawl/errors/extract_data_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[ExtractResponse](firecrawl_api/models/extract_response.py)</code> -- Successful extraction
+**On `Success`**: `payload` is <code>[ExtractResponse](firecrawl/models/extract_response.py)</code> -- Successful extraction
 
-**On `Failure`**: `error` is <code>[ExtractDataErrorBody](firecrawl_api/errors/extract_data_error.py)</code>
+**On `Failure`**: `error` is <code>[ExtractDataErrorBody](firecrawl/errors/extract_data_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400 | <code>[Extract400Error1](firecrawl_api/models/extract400_error1.py)</code> |
-| 500 | <code>[Extract500Error1](firecrawl_api/models/extract500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 400 | <code>[Extract400Error1](firecrawl/models/extract400_error1.py)</code> |
+| 500 | <code>[Extract500Error1](firecrawl/models/extract500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -1533,7 +1533,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>UUID</code> | The ID of the extract job |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1543,11 +1543,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[ExtractStatusResponse](firecrawl_api/models/extract_status_response.py), [RawError](firecrawl_api/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[ExtractStatusResponse](firecrawl/models/extract_status_response.py), [RawError](firecrawl/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[ExtractStatusResponse](firecrawl_api/models/extract_status_response.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[ExtractStatusResponse](firecrawl/models/extract_status_response.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[RawError](firecrawl_api/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](firecrawl/core/results.py)</code>
 
 </dd>
 </dl>
@@ -1559,7 +1559,7 @@ match result:
 
 ## Feedback
 
-> Source: [Feedback](firecrawl_api/apis/feedback.py)
+> Source: [Feedback](firecrawl/apis/feedback.py)
 
 <details>
 <summary><code>def submit_endpoint_feedback(body: EndpointFeedbackRequest | EndpointFeedbackRequestDict, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[FeedbackResponse, SubmitEndpointFeedbackErrorBody]</code></summary>
@@ -1614,8 +1614,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[EndpointFeedbackRequest](firecrawl_api/models/endpoint_feedback_request.py) \| [EndpointFeedbackRequestDict](firecrawl_api/models/endpoint_feedback_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[EndpointFeedbackRequest](firecrawl/models/endpoint_feedback_request.py) \| [EndpointFeedbackRequestDict](firecrawl/models/endpoint_feedback_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1625,18 +1625,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[FeedbackResponse](firecrawl_api/models/feedback_response.py), [SubmitEndpointFeedbackErrorBody](firecrawl_api/errors/submit_endpoint_feedback_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[FeedbackResponse](firecrawl/models/feedback_response.py), [SubmitEndpointFeedbackErrorBody](firecrawl/errors/submit_endpoint_feedback_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[FeedbackResponse](firecrawl_api/models/feedback_response.py)</code> -- Feedback recorded
+**On `Success`**: `payload` is <code>[FeedbackResponse](firecrawl/models/feedback_response.py)</code> -- Feedback recorded
 
-**On `Failure`**: `error` is <code>[SubmitEndpointFeedbackErrorBody](firecrawl_api/errors/submit_endpoint_feedback_error.py)</code>
+**On `Failure`**: `error` is <code>[SubmitEndpointFeedbackErrorBody](firecrawl/errors/submit_endpoint_feedback_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 403, 404, 409, 500 | <code>[FeedbackErrorResponse](firecrawl_api/models/feedback_error_response.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 400, 403, 404, 409, 500 | <code>[FeedbackErrorResponse](firecrawl/models/feedback_error_response.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -1700,8 +1700,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>job_id</code> | <code>UUID</code> | Search job id returned by /search. |
-| <code>body</code> | <code>[SearchFeedbackRequest](firecrawl_api/models/search_feedback_request.py) \| [SearchFeedbackRequestDict](firecrawl_api/models/search_feedback_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[SearchFeedbackRequest](firecrawl/models/search_feedback_request.py) \| [SearchFeedbackRequestDict](firecrawl/models/search_feedback_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1711,18 +1711,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[FeedbackResponse](firecrawl_api/models/feedback_response.py), [SubmitSearchFeedbackErrorBody](firecrawl_api/errors/submit_search_feedback_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[FeedbackResponse](firecrawl/models/feedback_response.py), [SubmitSearchFeedbackErrorBody](firecrawl/errors/submit_search_feedback_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[FeedbackResponse](firecrawl_api/models/feedback_response.py)</code> -- Feedback recorded
+**On `Success`**: `payload` is <code>[FeedbackResponse](firecrawl/models/feedback_response.py)</code> -- Feedback recorded
 
-**On `Failure`**: `error` is <code>[SubmitSearchFeedbackErrorBody](firecrawl_api/errors/submit_search_feedback_error.py)</code>
+**On `Failure`**: `error` is <code>[SubmitSearchFeedbackErrorBody](firecrawl/errors/submit_search_feedback_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 403, 404, 409, 500 | <code>[FeedbackErrorResponse](firecrawl_api/models/feedback_error_response.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 400, 403, 404, 409, 500 | <code>[FeedbackErrorResponse](firecrawl/models/feedback_error_response.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -1734,7 +1734,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## Interact
 
-> Source: [Interact](firecrawl_api/apis/interact.py)
+> Source: [Interact](firecrawl/apis/interact.py)
 
 <details>
 <summary><code>def create_browser_session(body: InteractRequest | InteractRequestDict, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[InteractResponse, CreateBrowserSessionErrorBody]</code></summary>
@@ -1789,8 +1789,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[InteractRequest](firecrawl_api/models/interact_request.py) \| [InteractRequestDict](firecrawl_api/models/interact_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[InteractRequest](firecrawl/models/interact_request.py) \| [InteractRequestDict](firecrawl/models/interact_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1800,18 +1800,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[InteractResponse](firecrawl_api/models/interact_response.py), [CreateBrowserSessionErrorBody](firecrawl_api/errors/create_browser_session_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[InteractResponse](firecrawl/models/interact_response.py), [CreateBrowserSessionErrorBody](firecrawl/errors/create_browser_session_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[InteractResponse](firecrawl_api/models/interact_response.py)</code> -- Interact session created successfully
+**On `Success`**: `payload` is <code>[InteractResponse](firecrawl/models/interact_response.py)</code> -- Interact session created successfully
 
-**On `Failure`**: `error` is <code>[CreateBrowserSessionErrorBody](firecrawl_api/errors/create_browser_session_error.py)</code>
+**On `Failure`**: `error` is <code>[CreateBrowserSessionErrorBody](firecrawl/errors/create_browser_session_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 402 | <code>[Interact402Error1](firecrawl_api/models/interact402_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 402 | <code>[Interact402Error1](firecrawl/models/interact402_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -1875,7 +1875,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>session_id</code> | <code>str</code> | The interact session ID |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1885,18 +1885,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[InteractResponse2](firecrawl_api/models/interact_response2.py), [DeleteBrowserSessionErrorBody](firecrawl_api/errors/delete_browser_session_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[InteractResponse2](firecrawl/models/interact_response2.py), [DeleteBrowserSessionErrorBody](firecrawl/errors/delete_browser_session_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[InteractResponse2](firecrawl_api/models/interact_response2.py)</code> -- Interact session deleted successfully
+**On `Success`**: `payload` is <code>[InteractResponse2](firecrawl/models/interact_response2.py)</code> -- Interact session deleted successfully
 
-**On `Failure`**: `error` is <code>[DeleteBrowserSessionErrorBody](firecrawl_api/errors/delete_browser_session_error.py)</code>
+**On `Failure`**: `error` is <code>[DeleteBrowserSessionErrorBody](firecrawl/errors/delete_browser_session_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 402 | <code>[Interact402Error1](firecrawl_api/models/interact402_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 402 | <code>[Interact402Error1](firecrawl/models/interact402_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -1960,8 +1960,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>session_id</code> | <code>str</code> | The interact session ID |
-| <code>body</code> | <code>[InteractExecuteRequest](firecrawl_api/models/interact_execute_request.py) \| [InteractExecuteRequestDict](firecrawl_api/models/interact_execute_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[InteractExecuteRequest](firecrawl/models/interact_execute_request.py) \| [InteractExecuteRequestDict](firecrawl/models/interact_execute_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -1971,18 +1971,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[InteractExecuteResponse](firecrawl_api/models/interact_execute_response.py), [ExecuteBrowserCodeErrorBody](firecrawl_api/errors/execute_browser_code_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[InteractExecuteResponse](firecrawl/models/interact_execute_response.py), [ExecuteBrowserCodeErrorBody](firecrawl/errors/execute_browser_code_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[InteractExecuteResponse](firecrawl_api/models/interact_execute_response.py)</code> -- Code executed successfully
+**On `Success`**: `payload` is <code>[InteractExecuteResponse](firecrawl/models/interact_execute_response.py)</code> -- Code executed successfully
 
-**On `Failure`**: `error` is <code>[ExecuteBrowserCodeErrorBody](firecrawl_api/errors/execute_browser_code_error.py)</code>
+**On `Failure`**: `error` is <code>[ExecuteBrowserCodeErrorBody](firecrawl/errors/execute_browser_code_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 402 | <code>[InteractExecute402Error1](firecrawl_api/models/interact_execute402_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 402 | <code>[InteractExecute402Error1](firecrawl/models/interact_execute402_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2045,8 +2045,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>status</code> | <code>[Status10OrStr](firecrawl_api/models/enums/status10.py) \| None</code> | Filter sessions by status<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>status</code> | <code>[Status10OrStr](firecrawl/models/enums/status10.py) \| None</code> | Filter sessions by status<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2056,18 +2056,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[InteractResponse1](firecrawl_api/models/interact_response1.py), [ListBrowserSessionsErrorBody](firecrawl_api/errors/list_browser_sessions_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[InteractResponse1](firecrawl/models/interact_response1.py), [ListBrowserSessionsErrorBody](firecrawl/errors/list_browser_sessions_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[InteractResponse1](firecrawl_api/models/interact_response1.py)</code> -- List of interact sessions
+**On `Success`**: `payload` is <code>[InteractResponse1](firecrawl/models/interact_response1.py)</code> -- List of interact sessions
 
-**On `Failure`**: `error` is <code>[ListBrowserSessionsErrorBody](firecrawl_api/errors/list_browser_sessions_error.py)</code>
+**On `Failure`**: `error` is <code>[ListBrowserSessionsErrorBody](firecrawl/errors/list_browser_sessions_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 402 | <code>[Interact402Error1](firecrawl_api/models/interact402_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 402 | <code>[Interact402Error1](firecrawl/models/interact402_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2079,7 +2079,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## MappingApi
 
-> Source: [MappingApi](firecrawl_api/apis/mapping_api.py)
+> Source: [MappingApi](firecrawl/apis/mapping_api.py)
 
 <details>
 <summary><code>def map_urls(body: MapRequest | MapRequestDict, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[MapResponse, MapUrlsErrorBody]</code></summary>
@@ -2134,8 +2134,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[MapRequest](firecrawl_api/models/map_request.py) \| [MapRequestDict](firecrawl_api/models/map_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[MapRequest](firecrawl/models/map_request.py) \| [MapRequestDict](firecrawl/models/map_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2145,20 +2145,20 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[MapResponse](firecrawl_api/models/map_response.py), [MapUrlsErrorBody](firecrawl_api/errors/map_urls_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[MapResponse](firecrawl/models/map_response.py), [MapUrlsErrorBody](firecrawl/errors/map_urls_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[MapResponse](firecrawl_api/models/map_response.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[MapResponse](firecrawl/models/map_response.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[MapUrlsErrorBody](firecrawl_api/errors/map_urls_error.py)</code>
+**On `Failure`**: `error` is <code>[MapUrlsErrorBody](firecrawl/errors/map_urls_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 402 | <code>[Map402Error1](firecrawl_api/models/map402_error1.py)</code> |
-| 429 | <code>[Map429Error1](firecrawl_api/models/map429_error1.py)</code> |
-| 500 | <code>[Map500Error1](firecrawl_api/models/map500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 402 | <code>[Map402Error1](firecrawl/models/map402_error1.py)</code> |
+| 429 | <code>[Map429Error1](firecrawl/models/map429_error1.py)</code> |
+| 500 | <code>[Map500Error1](firecrawl/models/map500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2170,7 +2170,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## Miscellaneous
 
-> Source: [Miscellaneous](firecrawl_api/apis/miscellaneous.py)
+> Source: [Miscellaneous](firecrawl/apis/miscellaneous.py)
 
 <details>
 <summary><code>def get_queue_status(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TeamQueueStatusResponse, RawError]</code></summary>
@@ -2225,7 +2225,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2235,11 +2235,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[TeamQueueStatusResponse](firecrawl_api/models/team_queue_status_response.py), [RawError](firecrawl_api/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[TeamQueueStatusResponse](firecrawl/models/team_queue_status_response.py), [RawError](firecrawl/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TeamQueueStatusResponse](firecrawl_api/models/team_queue_status_response.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[TeamQueueStatusResponse](firecrawl/models/team_queue_status_response.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[RawError](firecrawl_api/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](firecrawl/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2251,7 +2251,7 @@ match result:
 
 ## Monitoring
 
-> Source: [Monitoring](firecrawl_api/apis/monitoring.py)
+> Source: [Monitoring](firecrawl/apis/monitoring.py)
 
 <details>
 <summary><code>def create_monitor(body: MonitorCreateRequest | MonitorCreateRequestDict, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[MonitorResponse, CreateMonitorErrorBody]</code></summary>
@@ -2306,8 +2306,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[MonitorCreateRequest](firecrawl_api/models/monitor_create_request.py) \| [MonitorCreateRequestDict](firecrawl_api/models/monitor_create_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[MonitorCreateRequest](firecrawl/models/monitor_create_request.py) \| [MonitorCreateRequestDict](firecrawl/models/monitor_create_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2317,18 +2317,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[MonitorResponse](firecrawl_api/models/monitor_response.py), [CreateMonitorErrorBody](firecrawl_api/errors/create_monitor_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[MonitorResponse](firecrawl/models/monitor_response.py), [CreateMonitorErrorBody](firecrawl/errors/create_monitor_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[MonitorResponse](firecrawl_api/models/monitor_response.py)</code> -- Monitor created
+**On `Success`**: `payload` is <code>[MonitorResponse](firecrawl/models/monitor_response.py)</code> -- Monitor created
 
-**On `Failure`**: `error` is <code>[CreateMonitorErrorBody](firecrawl_api/errors/create_monitor_error.py)</code>
+**On `Failure`**: `error` is <code>[CreateMonitorErrorBody](firecrawl/errors/create_monitor_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400 | <code>[RawError](firecrawl_api/core/results.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 400 | <code>[RawError](firecrawl/core/results.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2392,7 +2392,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>monitor_id</code> | <code>UUID</code> | The monitor ID |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2402,18 +2402,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[SuccessResponse](firecrawl_api/models/success_response.py), [DeleteMonitorErrorBody](firecrawl_api/errors/delete_monitor_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[SuccessResponse](firecrawl/models/success_response.py), [DeleteMonitorErrorBody](firecrawl/errors/delete_monitor_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SuccessResponse](firecrawl_api/models/success_response.py)</code> -- Monitor deleted
+**On `Success`**: `payload` is <code>[SuccessResponse](firecrawl/models/success_response.py)</code> -- Monitor deleted
 
-**On `Failure`**: `error` is <code>[DeleteMonitorErrorBody](firecrawl_api/errors/delete_monitor_error.py)</code>
+**On `Failure`**: `error` is <code>[DeleteMonitorErrorBody](firecrawl/errors/delete_monitor_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 404 | <code>[RawError](firecrawl_api/core/results.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 404 | <code>[RawError](firecrawl/core/results.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2477,7 +2477,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>monitor_id</code> | <code>UUID</code> | The monitor ID |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2487,18 +2487,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[MonitorResponse](firecrawl_api/models/monitor_response.py), [GetMonitorErrorBody](firecrawl_api/errors/get_monitor_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[MonitorResponse](firecrawl/models/monitor_response.py), [GetMonitorErrorBody](firecrawl/errors/get_monitor_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[MonitorResponse](firecrawl_api/models/monitor_response.py)</code> -- Monitor details
+**On `Success`**: `payload` is <code>[MonitorResponse](firecrawl/models/monitor_response.py)</code> -- Monitor details
 
-**On `Failure`**: `error` is <code>[GetMonitorErrorBody](firecrawl_api/errors/get_monitor_error.py)</code>
+**On `Failure`**: `error` is <code>[GetMonitorErrorBody](firecrawl/errors/get_monitor_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 404 | <code>[RawError](firecrawl_api/core/results.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 404 | <code>[RawError](firecrawl/core/results.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2565,8 +2565,8 @@ match result:
 | <code>check_id</code> | <code>UUID</code> | The monitor check ID |
 | <code>limit</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>25</code> |
 | <code>skip</code> | <code>int \| None</code> | Number of page results to skip. Use the `next` URL from the previous response for pagination.<br>**Default**: <code>0</code> |
-| <code>status</code> | <code>[Status3OrStr](firecrawl_api/models/enums/status3.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>status</code> | <code>[Status3OrStr](firecrawl/models/enums/status3.py) \| None</code> | Value sent with the request.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2576,18 +2576,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[MonitorCheckDetailResponse](firecrawl_api/models/monitor_check_detail_response.py), [GetMonitorCheckErrorBody](firecrawl_api/errors/get_monitor_check_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[MonitorCheckDetailResponse](firecrawl/models/monitor_check_detail_response.py), [GetMonitorCheckErrorBody](firecrawl/errors/get_monitor_check_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[MonitorCheckDetailResponse](firecrawl_api/models/monitor_check_detail_response.py)</code> -- Monitor check details
+**On `Success`**: `payload` is <code>[MonitorCheckDetailResponse](firecrawl/models/monitor_check_detail_response.py)</code> -- Monitor check details
 
-**On `Failure`**: `error` is <code>[GetMonitorCheckErrorBody](firecrawl_api/errors/get_monitor_check_error.py)</code>
+**On `Failure`**: `error` is <code>[GetMonitorCheckErrorBody](firecrawl/errors/get_monitor_check_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 404 | <code>[RawError](firecrawl_api/core/results.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 404 | <code>[RawError](firecrawl/core/results.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2653,8 +2653,8 @@ match result:
 | <code>monitor_id</code> | <code>UUID</code> | The monitor ID |
 | <code>limit</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>25</code> |
 | <code>offset</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>0</code> |
-| <code>status</code> | <code>[Status2OrStr](firecrawl_api/models/enums/status2.py) \| None</code> | Filter checks by status.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>status</code> | <code>[Status2OrStr](firecrawl/models/enums/status2.py) \| None</code> | Filter checks by status.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2664,11 +2664,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[MonitorCheckListResponse](firecrawl_api/models/monitor_check_list_response.py), [RawError](firecrawl_api/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[MonitorCheckListResponse](firecrawl/models/monitor_check_list_response.py), [RawError](firecrawl/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[MonitorCheckListResponse](firecrawl_api/models/monitor_check_list_response.py)</code> -- Monitor checks
+**On `Success`**: `payload` is <code>[MonitorCheckListResponse](firecrawl/models/monitor_check_list_response.py)</code> -- Monitor checks
 
-**On `Failure`**: `error` is <code>[RawError](firecrawl_api/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](firecrawl/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2733,7 +2733,7 @@ match result:
 | --- | --- | --- |
 | <code>limit</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>25</code> |
 | <code>offset</code> | <code>int \| None</code> | Value sent with the request.<br>**Default**: <code>0</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2743,11 +2743,11 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[MonitorListResponse](firecrawl_api/models/monitor_list_response.py), [RawError](firecrawl_api/core/results.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[MonitorListResponse](firecrawl/models/monitor_list_response.py), [RawError](firecrawl/core/results.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[MonitorListResponse](firecrawl_api/models/monitor_list_response.py)</code> -- List of monitors
+**On `Success`**: `payload` is <code>[MonitorListResponse](firecrawl/models/monitor_list_response.py)</code> -- List of monitors
 
-**On `Failure`**: `error` is <code>[RawError](firecrawl_api/core/results.py)</code>
+**On `Failure`**: `error` is <code>[RawError](firecrawl/core/results.py)</code>
 
 </dd>
 </dl>
@@ -2811,7 +2811,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>monitor_id</code> | <code>UUID</code> | The monitor ID |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2821,18 +2821,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[MonitorRunResponse](firecrawl_api/models/monitor_run_response.py), [RunMonitorErrorBody](firecrawl_api/errors/run_monitor_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[MonitorRunResponse](firecrawl/models/monitor_run_response.py), [RunMonitorErrorBody](firecrawl/errors/run_monitor_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[MonitorRunResponse](firecrawl_api/models/monitor_run_response.py)</code> -- Monitor check queued
+**On `Success`**: `payload` is <code>[MonitorRunResponse](firecrawl/models/monitor_run_response.py)</code> -- Monitor check queued
 
-**On `Failure`**: `error` is <code>[RunMonitorErrorBody](firecrawl_api/errors/run_monitor_error.py)</code>
+**On `Failure`**: `error` is <code>[RunMonitorErrorBody](firecrawl/errors/run_monitor_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 409 | <code>[RawError](firecrawl_api/core/results.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 409 | <code>[RawError](firecrawl/core/results.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2896,8 +2896,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>monitor_id</code> | <code>UUID</code> | The monitor ID |
-| <code>body</code> | <code>[MonitorUpdateRequest](firecrawl_api/models/monitor_update_request.py) \| [MonitorUpdateRequestDict](firecrawl_api/models/monitor_update_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[MonitorUpdateRequest](firecrawl/models/monitor_update_request.py) \| [MonitorUpdateRequestDict](firecrawl/models/monitor_update_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2907,18 +2907,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[MonitorResponse](firecrawl_api/models/monitor_response.py), [UpdateMonitorErrorBody](firecrawl_api/errors/update_monitor_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[MonitorResponse](firecrawl/models/monitor_response.py), [UpdateMonitorErrorBody](firecrawl/errors/update_monitor_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[MonitorResponse](firecrawl_api/models/monitor_response.py)</code> -- Monitor updated
+**On `Success`**: `payload` is <code>[MonitorResponse](firecrawl/models/monitor_response.py)</code> -- Monitor updated
 
-**On `Failure`**: `error` is <code>[UpdateMonitorErrorBody](firecrawl_api/errors/update_monitor_error.py)</code>
+**On `Failure`**: `error` is <code>[UpdateMonitorErrorBody](firecrawl/errors/update_monitor_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 404 | <code>[RawError](firecrawl_api/core/results.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 404 | <code>[RawError](firecrawl/core/results.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -2930,7 +2930,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## ResearchApi
 
-> Source: [ResearchApi](firecrawl_api/apis/research_api.py)
+> Source: [ResearchApi](firecrawl/apis/research_api.py)
 
 <details>
 <summary><code>def research_get_paper(id: str, *, query: str | None = None, k: int | None = 4, request_options: RequestOptionsOrDict | None = None) -> ApiResult[SearchResearchPapersResponse, ResearchGetPaperErrorBody]</code></summary>
@@ -2988,7 +2988,7 @@ match result:
 | <code>id</code> | <code>str</code> | Paper reference: a canonical paperId or source-specific primaryId. |
 | <code>query</code> | <code>str \| None</code> | When present, returns the top matching full-text passages for this question. Omit it to inspect metadata only.<br>**Default**: <code>None</code> |
 | <code>k</code> | <code>int \| None</code> | Passage count for read mode. Only valid when query is present.<br>**Default**: <code>4</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -2998,18 +2998,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[SearchResearchPapersResponse](firecrawl_api/models/unions/search_research_papers_response.py), [ResearchGetPaperErrorBody](firecrawl_api/errors/research_get_paper_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[SearchResearchPapersResponse](firecrawl/models/unions/search_research_papers_response.py), [ResearchGetPaperErrorBody](firecrawl/errors/research_get_paper_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SearchResearchPapersResponse](firecrawl_api/models/unions/search_research_papers_response.py)</code> -- Paper metadata or read-mode passages.
+**On `Success`**: `payload` is <code>[SearchResearchPapersResponse](firecrawl/models/unions/search_research_papers_response.py)</code> -- Paper metadata or read-mode passages.
 
-**On `Failure`**: `error` is <code>[ResearchGetPaperErrorBody](firecrawl_api/errors/research_get_paper_error.py)</code>
+**On `Failure`**: `error` is <code>[ResearchGetPaperErrorBody](firecrawl/errors/research_get_paper_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 404, 429, 500 | <code>[RawError](firecrawl_api/core/results.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 400, 401, 404, 429, 500 | <code>[RawError](firecrawl/core/results.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3074,11 +3074,11 @@ match result:
 | --- | --- | --- |
 | <code>id</code> | <code>str</code> | Primary seed paper reference. |
 | <code>intent</code> | <code>str</code> | Natural-language ranking/filtering intent used for semantic ranking. |
-| <code>mode</code> | <code>[Mode5OrStr](firecrawl_api/models/enums/mode5.py) \| None</code> | Structural expansion mode.<br>**Default**: <code>None</code> |
+| <code>mode</code> | <code>[Mode5OrStr](firecrawl/models/enums/mode5.py) \| None</code> | Structural expansion mode.<br>**Default**: <code>None</code> |
 | <code>k</code> | <code>int \| None</code> | Maximum number of related papers to return.<br>**Default**: <code>40</code> |
 | <code>rerank</code> | <code>bool \| None</code> | Apply an additional rerank over fused candidates.<br>**Default**: <code>None</code> |
 | <code>anchor</code> | <code>str \| None</code> | Additional seed paper reference. Repeat this parameter for multiple anchors.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3088,18 +3088,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[ResearchSimilarPapersResponse](firecrawl_api/models/research_similar_papers_response.py), [ResearchRelatedPapersErrorBody](firecrawl_api/errors/research_related_papers_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[ResearchSimilarPapersResponse](firecrawl/models/research_similar_papers_response.py), [ResearchRelatedPapersErrorBody](firecrawl/errors/research_related_papers_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[ResearchSimilarPapersResponse](firecrawl_api/models/research_similar_papers_response.py)</code> -- Ranked related papers.
+**On `Success`**: `payload` is <code>[ResearchSimilarPapersResponse](firecrawl/models/research_similar_papers_response.py)</code> -- Ranked related papers.
 
-**On `Failure`**: `error` is <code>[ResearchRelatedPapersErrorBody](firecrawl_api/errors/research_related_papers_error.py)</code>
+**On `Failure`**: `error` is <code>[ResearchRelatedPapersErrorBody](firecrawl/errors/research_related_papers_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 429, 500 | <code>[RawError](firecrawl_api/core/results.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 400, 401, 429, 500 | <code>[RawError](firecrawl/core/results.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3168,7 +3168,7 @@ match result:
 | <code>categories</code> | <code>str \| None</code> | Paper category filter. Repeat or pass a comma-separated value; all filters must match.<br>**Default**: <code>None</code> |
 | <code>from_</code> | <code>Date \| None</code> | Inclusive lower bound on created/updated date.<br>**Default**: <code>None</code> |
 | <code>to</code> | <code>Date \| None</code> | Inclusive upper bound on created/updated date.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3178,18 +3178,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[ResearchSearchPapersResponse](firecrawl_api/models/research_search_papers_response.py), [ResearchSearchPapersErrorBody](firecrawl_api/errors/research_search_papers_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[ResearchSearchPapersResponse](firecrawl/models/research_search_papers_response.py), [ResearchSearchPapersErrorBody](firecrawl/errors/research_search_papers_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[ResearchSearchPapersResponse](firecrawl_api/models/research_search_papers_response.py)</code> -- Ranked paper results.
+**On `Success`**: `payload` is <code>[ResearchSearchPapersResponse](firecrawl/models/research_search_papers_response.py)</code> -- Ranked paper results.
 
-**On `Failure`**: `error` is <code>[ResearchSearchPapersErrorBody](firecrawl_api/errors/research_search_papers_error.py)</code>
+**On `Failure`**: `error` is <code>[ResearchSearchPapersErrorBody](firecrawl/errors/research_search_papers_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 429, 500 | <code>[RawError](firecrawl_api/core/results.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 400, 401, 429, 500 | <code>[RawError](firecrawl/core/results.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3201,7 +3201,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## Scraping
 
-> Source: [Scraping](firecrawl_api/apis/scraping.py)
+> Source: [Scraping](firecrawl/apis/scraping.py)
 
 <details>
 <summary><code>def cancel_batch_scrape(id: UUID, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[BatchScrapeResponse, CancelBatchScrapeErrorBody]</code></summary>
@@ -3257,7 +3257,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>UUID</code> | The ID of the batch scrape job |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3267,19 +3267,19 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[BatchScrapeResponse](firecrawl_api/models/batch_scrape_response.py), [CancelBatchScrapeErrorBody](firecrawl_api/errors/cancel_batch_scrape_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[BatchScrapeResponse](firecrawl/models/batch_scrape_response.py), [CancelBatchScrapeErrorBody](firecrawl/errors/cancel_batch_scrape_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[BatchScrapeResponse](firecrawl_api/models/batch_scrape_response.py)</code> -- Successful cancellation
+**On `Success`**: `payload` is <code>[BatchScrapeResponse](firecrawl/models/batch_scrape_response.py)</code> -- Successful cancellation
 
-**On `Failure`**: `error` is <code>[CancelBatchScrapeErrorBody](firecrawl_api/errors/cancel_batch_scrape_error.py)</code>
+**On `Failure`**: `error` is <code>[CancelBatchScrapeErrorBody](firecrawl/errors/cancel_batch_scrape_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 404 | <code>[BatchScrape404Error1](firecrawl_api/models/batch_scrape404_error1.py)</code> |
-| 500 | <code>[BatchScrape500Error1](firecrawl_api/models/batch_scrape500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 404 | <code>[BatchScrape404Error1](firecrawl/models/batch_scrape404_error1.py)</code> |
+| 500 | <code>[BatchScrape500Error1](firecrawl/models/batch_scrape500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3343,7 +3343,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>UUID</code> | The ID of the batch scrape job |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3353,20 +3353,20 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[CrawlErrorsResponseObj](firecrawl_api/models/crawl_errors_response_obj.py), [GetBatchScrapeErrorsErrorBody](firecrawl_api/errors/get_batch_scrape_errors_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[CrawlErrorsResponseObj](firecrawl/models/crawl_errors_response_obj.py), [GetBatchScrapeErrorsErrorBody](firecrawl/errors/get_batch_scrape_errors_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[CrawlErrorsResponseObj](firecrawl_api/models/crawl_errors_response_obj.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[CrawlErrorsResponseObj](firecrawl/models/crawl_errors_response_obj.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[GetBatchScrapeErrorsErrorBody](firecrawl_api/errors/get_batch_scrape_errors_error.py)</code>
+**On `Failure`**: `error` is <code>[GetBatchScrapeErrorsErrorBody](firecrawl/errors/get_batch_scrape_errors_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 402 | <code>[BatchScrapeErrors402Error1](firecrawl_api/models/batch_scrape_errors402_error1.py)</code> |
-| 429 | <code>[BatchScrapeErrors429Error1](firecrawl_api/models/batch_scrape_errors429_error1.py)</code> |
-| 500 | <code>[BatchScrapeErrors500Error1](firecrawl_api/models/batch_scrape_errors500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 402 | <code>[BatchScrapeErrors402Error1](firecrawl/models/batch_scrape_errors402_error1.py)</code> |
+| 429 | <code>[BatchScrapeErrors429Error1](firecrawl/models/batch_scrape_errors429_error1.py)</code> |
+| 500 | <code>[BatchScrapeErrors500Error1](firecrawl/models/batch_scrape_errors500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3430,7 +3430,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>id</code> | <code>UUID</code> | The ID of the batch scrape job |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3440,20 +3440,20 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[BatchScrapeStatusResponseObj](firecrawl_api/models/batch_scrape_status_response_obj.py), [GetBatchScrapeStatusErrorBody](firecrawl_api/errors/get_batch_scrape_status_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[BatchScrapeStatusResponseObj](firecrawl/models/batch_scrape_status_response_obj.py), [GetBatchScrapeStatusErrorBody](firecrawl/errors/get_batch_scrape_status_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[BatchScrapeStatusResponseObj](firecrawl_api/models/batch_scrape_status_response_obj.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[BatchScrapeStatusResponseObj](firecrawl/models/batch_scrape_status_response_obj.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[GetBatchScrapeStatusErrorBody](firecrawl_api/errors/get_batch_scrape_status_error.py)</code>
+**On `Failure`**: `error` is <code>[GetBatchScrapeStatusErrorBody](firecrawl/errors/get_batch_scrape_status_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 402 | <code>[BatchScrape402Error1](firecrawl_api/models/batch_scrape402_error1.py)</code> |
-| 429 | <code>[BatchScrape429Error1](firecrawl_api/models/batch_scrape429_error1.py)</code> |
-| 500 | <code>[BatchScrape500Error1](firecrawl_api/models/batch_scrape500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 402 | <code>[BatchScrape402Error1](firecrawl/models/batch_scrape402_error1.py)</code> |
+| 429 | <code>[BatchScrape429Error1](firecrawl/models/batch_scrape429_error1.py)</code> |
+| 500 | <code>[BatchScrape500Error1](firecrawl/models/batch_scrape500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3517,7 +3517,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>job_id</code> | <code>UUID</code> | The ID of the job |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3527,20 +3527,20 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[ScrapeResponse](firecrawl_api/models/scrape_response.py), [GetScrapeStatusErrorBody](firecrawl_api/errors/get_scrape_status_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[ScrapeResponse](firecrawl/models/scrape_response.py), [GetScrapeStatusErrorBody](firecrawl/errors/get_scrape_status_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[ScrapeResponse](firecrawl_api/models/scrape_response.py)</code> -- Scrape job status
+**On `Success`**: `payload` is <code>[ScrapeResponse](firecrawl/models/scrape_response.py)</code> -- Scrape job status
 
-**On `Failure`**: `error` is <code>[GetScrapeStatusErrorBody](firecrawl_api/errors/get_scrape_status_error.py)</code>
+**On `Failure`**: `error` is <code>[GetScrapeStatusErrorBody](firecrawl/errors/get_scrape_status_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 402 | <code>[Scrape402Error21](firecrawl_api/models/scrape402_error21.py)</code> |
-| 429 | <code>[Scrape429Error21](firecrawl_api/models/scrape429_error21.py)</code> |
-| 500 | <code>[Scrape500Error21](firecrawl_api/models/scrape500_error21.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 402 | <code>[Scrape402Error21](firecrawl/models/scrape402_error21.py)</code> |
+| 429 | <code>[Scrape429Error21](firecrawl/models/scrape429_error21.py)</code> |
+| 500 | <code>[Scrape500Error21](firecrawl/models/scrape500_error21.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3604,8 +3604,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>job_id</code> | <code>UUID</code> | The scrape job ID |
-| <code>body</code> | <code>[ScrapeInteractRequest](firecrawl_api/models/scrape_interact_request.py) \| [ScrapeInteractRequestDict](firecrawl_api/models/scrape_interact_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[ScrapeInteractRequest](firecrawl/models/scrape_interact_request.py) \| [ScrapeInteractRequestDict](firecrawl/models/scrape_interact_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3615,25 +3615,25 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[ScrapeInteractResponse](firecrawl_api/models/scrape_interact_response.py), [InteractWithScrapeBrowserSessionErrorBody](firecrawl_api/errors/interact_with_scrape_browser_session_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[ScrapeInteractResponse](firecrawl/models/scrape_interact_response.py), [InteractWithScrapeBrowserSessionErrorBody](firecrawl/errors/interact_with_scrape_browser_session_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[ScrapeInteractResponse](firecrawl_api/models/scrape_interact_response.py)</code> -- Code executed successfully
+**On `Success`**: `payload` is <code>[ScrapeInteractResponse](firecrawl/models/scrape_interact_response.py)</code> -- Code executed successfully
 
-**On `Failure`**: `error` is <code>[InteractWithScrapeBrowserSessionErrorBody](firecrawl_api/errors/interact_with_scrape_browser_session_error.py)</code>
+**On `Failure`**: `error` is <code>[InteractWithScrapeBrowserSessionErrorBody](firecrawl/errors/interact_with_scrape_browser_session_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400 | <code>[ScrapeInteract400Error1](firecrawl_api/models/scrape_interact400_error1.py)</code> |
-| 402 | <code>[ScrapeInteract402Error1](firecrawl_api/models/scrape_interact402_error1.py)</code> |
-| 403 | <code>[ScrapeInteract403Error1](firecrawl_api/models/scrape_interact403_error1.py)</code> |
-| 404 | <code>[ScrapeInteract404Error1](firecrawl_api/models/scrape_interact404_error1.py)</code> |
-| 409 | <code>[ScrapeInteract409Error1](firecrawl_api/models/scrape_interact409_error1.py)</code> |
-| 410 | <code>[ScrapeInteract410Error1](firecrawl_api/models/scrape_interact410_error1.py)</code> |
-| 429 | <code>[ScrapeInteract429Error1](firecrawl_api/models/scrape_interact429_error1.py)</code> |
-| 502 | <code>[ScrapeInteract502Error1](firecrawl_api/models/scrape_interact502_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 400 | <code>[ScrapeInteract400Error1](firecrawl/models/scrape_interact400_error1.py)</code> |
+| 402 | <code>[ScrapeInteract402Error1](firecrawl/models/scrape_interact402_error1.py)</code> |
+| 403 | <code>[ScrapeInteract403Error1](firecrawl/models/scrape_interact403_error1.py)</code> |
+| 404 | <code>[ScrapeInteract404Error1](firecrawl/models/scrape_interact404_error1.py)</code> |
+| 409 | <code>[ScrapeInteract409Error1](firecrawl/models/scrape_interact409_error1.py)</code> |
+| 410 | <code>[ScrapeInteract410Error1](firecrawl/models/scrape_interact410_error1.py)</code> |
+| 429 | <code>[ScrapeInteract429Error1](firecrawl/models/scrape_interact429_error1.py)</code> |
+| 502 | <code>[ScrapeInteract502Error1](firecrawl/models/scrape_interact502_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3697,8 +3697,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>file</code> | <code>bytes</code> | The file bytes to parse. Supported extensions: .html, .htm, .xhtml, .pdf, .docx, .doc, .docm, .odt, .ods, .odp, .rtf, .xlsx, .xls, .xlsm, .xlsb, .pptx, .ppt, .pptm, .epub, .csv. |
-| <code>options</code> | <code>[ParseOptions](firecrawl_api/models/parse_options.py) \| [ParseOptionsDict](firecrawl_api/models/parse_options.py) \| None</code> | Optional parse options sent as JSON in the multipart `options` field.<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>options</code> | <code>[ParseOptions](firecrawl/models/parse_options.py) \| [ParseOptionsDict](firecrawl/models/parse_options.py) \| None</code> | Optional parse options sent as JSON in the multipart `options` field.<br>**Default**: <code>None</code> |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3708,21 +3708,21 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[ScrapeResponse](firecrawl_api/models/scrape_response.py), [ParseFileErrorBody](firecrawl_api/errors/parse_file_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[ScrapeResponse](firecrawl/models/scrape_response.py), [ParseFileErrorBody](firecrawl/errors/parse_file_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[ScrapeResponse](firecrawl_api/models/scrape_response.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[ScrapeResponse](firecrawl/models/scrape_response.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[ParseFileErrorBody](firecrawl_api/errors/parse_file_error.py)</code>
+**On `Failure`**: `error` is <code>[ParseFileErrorBody](firecrawl/errors/parse_file_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400 | <code>[Parse400Error1](firecrawl_api/models/parse400_error1.py)</code> |
-| 402 | <code>[Parse402Error1](firecrawl_api/models/parse402_error1.py)</code> |
-| 429 | <code>[Parse429Error1](firecrawl_api/models/parse429_error1.py)</code> |
-| 500 | <code>[Parse500Error1](firecrawl_api/models/parse500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 400 | <code>[Parse400Error1](firecrawl/models/parse400_error1.py)</code> |
+| 402 | <code>[Parse402Error1](firecrawl/models/parse402_error1.py)</code> |
+| 429 | <code>[Parse429Error1](firecrawl/models/parse429_error1.py)</code> |
+| 500 | <code>[Parse500Error1](firecrawl/models/parse500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3785,8 +3785,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[ScrapeRequest](firecrawl_api/models/scrape_request.py) \| [ScrapeRequestDict](firecrawl_api/models/scrape_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[ScrapeRequest](firecrawl/models/scrape_request.py) \| [ScrapeRequestDict](firecrawl/models/scrape_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3796,20 +3796,20 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[ScrapeResponse](firecrawl_api/models/scrape_response.py), [ScrapeAndExtractFromUrlErrorBody](firecrawl_api/errors/scrape_and_extract_from_url_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[ScrapeResponse](firecrawl/models/scrape_response.py), [ScrapeAndExtractFromUrlErrorBody](firecrawl/errors/scrape_and_extract_from_url_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[ScrapeResponse](firecrawl_api/models/scrape_response.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[ScrapeResponse](firecrawl/models/scrape_response.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[ScrapeAndExtractFromUrlErrorBody](firecrawl_api/errors/scrape_and_extract_from_url_error.py)</code>
+**On `Failure`**: `error` is <code>[ScrapeAndExtractFromUrlErrorBody](firecrawl/errors/scrape_and_extract_from_url_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 402 | <code>[Scrape402Error1](firecrawl_api/models/scrape402_error1.py)</code> |
-| 429 | <code>[Scrape429Error1](firecrawl_api/models/scrape429_error1.py)</code> |
-| 500 | <code>[Scrape500Error1](firecrawl_api/models/scrape500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 402 | <code>[Scrape402Error1](firecrawl/models/scrape402_error1.py)</code> |
+| 429 | <code>[Scrape429Error1](firecrawl/models/scrape429_error1.py)</code> |
+| 500 | <code>[Scrape500Error1](firecrawl/models/scrape500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3872,8 +3872,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[BatchScrapeRequest](firecrawl_api/models/batch_scrape_request.py) \| [BatchScrapeRequestDict](firecrawl_api/models/batch_scrape_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[BatchScrapeRequest](firecrawl/models/batch_scrape_request.py) \| [BatchScrapeRequestDict](firecrawl/models/batch_scrape_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3883,20 +3883,20 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[BatchScrapeResponseObj](firecrawl_api/models/batch_scrape_response_obj.py), [ScrapeAndExtractFromUrlsErrorBody](firecrawl_api/errors/scrape_and_extract_from_urls_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[BatchScrapeResponseObj](firecrawl/models/batch_scrape_response_obj.py), [ScrapeAndExtractFromUrlsErrorBody](firecrawl/errors/scrape_and_extract_from_urls_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[BatchScrapeResponseObj](firecrawl_api/models/batch_scrape_response_obj.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[BatchScrapeResponseObj](firecrawl/models/batch_scrape_response_obj.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[ScrapeAndExtractFromUrlsErrorBody](firecrawl_api/errors/scrape_and_extract_from_urls_error.py)</code>
+**On `Failure`**: `error` is <code>[ScrapeAndExtractFromUrlsErrorBody](firecrawl/errors/scrape_and_extract_from_urls_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 402 | <code>[BatchScrape402Error1](firecrawl_api/models/batch_scrape402_error1.py)</code> |
-| 429 | <code>[BatchScrape429Error1](firecrawl_api/models/batch_scrape429_error1.py)</code> |
-| 500 | <code>[BatchScrape500Error1](firecrawl_api/models/batch_scrape500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 402 | <code>[BatchScrape402Error1](firecrawl/models/batch_scrape402_error1.py)</code> |
+| 429 | <code>[BatchScrape429Error1](firecrawl/models/batch_scrape429_error1.py)</code> |
+| 500 | <code>[BatchScrape500Error1](firecrawl/models/batch_scrape500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3960,7 +3960,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>job_id</code> | <code>UUID</code> | The scrape job ID |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -3970,19 +3970,19 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[SuccessResponse](firecrawl_api/models/success_response.py), [StopInteractiveScrapeBrowserSessionErrorBody](firecrawl_api/errors/stop_interactive_scrape_browser_session_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[SuccessResponse](firecrawl/models/success_response.py), [StopInteractiveScrapeBrowserSessionErrorBody](firecrawl/errors/stop_interactive_scrape_browser_session_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SuccessResponse](firecrawl_api/models/success_response.py)</code> -- Interactive scrape browser session stopped successfully
+**On `Success`**: `payload` is <code>[SuccessResponse](firecrawl/models/success_response.py)</code> -- Interactive scrape browser session stopped successfully
 
-**On `Failure`**: `error` is <code>[StopInteractiveScrapeBrowserSessionErrorBody](firecrawl_api/errors/stop_interactive_scrape_browser_session_error.py)</code>
+**On `Failure`**: `error` is <code>[StopInteractiveScrapeBrowserSessionErrorBody](firecrawl/errors/stop_interactive_scrape_browser_session_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 403 | <code>[ScrapeInteract403Error1](firecrawl_api/models/scrape_interact403_error1.py)</code> |
-| 404 | <code>[ScrapeInteract404Error1](firecrawl_api/models/scrape_interact404_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 403 | <code>[ScrapeInteract403Error1](firecrawl/models/scrape_interact403_error1.py)</code> |
+| 404 | <code>[ScrapeInteract404Error1](firecrawl/models/scrape_interact404_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -3994,7 +3994,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## Search
 
-> Source: [Search](firecrawl_api/apis/search.py)
+> Source: [Search](firecrawl/apis/search.py)
 
 <details>
 <summary><code>def search_and_scrape(body: SearchRequest | SearchRequestDict, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[SearchResponse, SearchAndScrapeErrorBody]</code></summary>
@@ -4049,8 +4049,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[SearchRequest](firecrawl_api/models/search_request.py) \| [SearchRequestDict](firecrawl_api/models/search_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[SearchRequest](firecrawl/models/search_request.py) \| [SearchRequestDict](firecrawl/models/search_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4060,19 +4060,19 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[SearchResponse](firecrawl_api/models/search_response.py), [SearchAndScrapeErrorBody](firecrawl_api/errors/search_and_scrape_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[SearchResponse](firecrawl/models/search_response.py), [SearchAndScrapeErrorBody](firecrawl/errors/search_and_scrape_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SearchResponse](firecrawl_api/models/search_response.py)</code> -- Successful response
+**On `Success`**: `payload` is <code>[SearchResponse](firecrawl/models/search_response.py)</code> -- Successful response
 
-**On `Failure`**: `error` is <code>[SearchAndScrapeErrorBody](firecrawl_api/errors/search_and_scrape_error.py)</code>
+**On `Failure`**: `error` is <code>[SearchAndScrapeErrorBody](firecrawl/errors/search_and_scrape_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 408 | <code>[Search408Error1](firecrawl_api/models/search408_error1.py)</code> |
-| 500 | <code>[Search500Error1](firecrawl_api/models/search500_error1.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 408 | <code>[Search408Error1](firecrawl/models/search408_error1.py)</code> |
+| 500 | <code>[Search500Error1](firecrawl/models/search500_error1.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4136,8 +4136,8 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>job_id</code> | <code>UUID</code> | Search job id returned by /search. |
-| <code>body</code> | <code>[SearchFeedbackRequest](firecrawl_api/models/search_feedback_request.py) \| [SearchFeedbackRequestDict](firecrawl_api/models/search_feedback_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[SearchFeedbackRequest](firecrawl/models/search_feedback_request.py) \| [SearchFeedbackRequestDict](firecrawl/models/search_feedback_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4147,18 +4147,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[FeedbackResponse](firecrawl_api/models/feedback_response.py), [SubmitSearchFeedbackErrorBody](firecrawl_api/errors/submit_search_feedback_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[FeedbackResponse](firecrawl/models/feedback_response.py), [SubmitSearchFeedbackErrorBody](firecrawl/errors/submit_search_feedback_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[FeedbackResponse](firecrawl_api/models/feedback_response.py)</code> -- Feedback recorded
+**On `Success`**: `payload` is <code>[FeedbackResponse](firecrawl/models/feedback_response.py)</code> -- Feedback recorded
 
-**On `Failure`**: `error` is <code>[SubmitSearchFeedbackErrorBody](firecrawl_api/errors/submit_search_feedback_error.py)</code>
+**On `Failure`**: `error` is <code>[SubmitSearchFeedbackErrorBody](firecrawl/errors/submit_search_feedback_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 403, 404, 409, 500 | <code>[FeedbackErrorResponse](firecrawl_api/models/feedback_error_response.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 400, 403, 404, 409, 500 | <code>[FeedbackErrorResponse](firecrawl/models/feedback_error_response.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4170,7 +4170,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## Support
 
-> Source: [Support](firecrawl_api/apis/support.py)
+> Source: [Support](firecrawl/apis/support.py)
 
 <details>
 <summary><code>def ask_support_agent(body: SupportAskRequest | SupportAskRequestDict, *, request_options: RequestOptionsOrDict | None = None) -> ApiResult[SupportAskResponse, AskSupportAgentErrorBody]</code></summary>
@@ -4225,8 +4225,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[SupportAskRequest](firecrawl_api/models/support_ask_request.py) \| [SupportAskRequestDict](firecrawl_api/models/support_ask_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[SupportAskRequest](firecrawl/models/support_ask_request.py) \| [SupportAskRequestDict](firecrawl/models/support_ask_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4236,18 +4236,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[SupportAskResponse](firecrawl_api/models/support_ask_response.py), [AskSupportAgentErrorBody](firecrawl_api/errors/ask_support_agent_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[SupportAskResponse](firecrawl/models/support_ask_response.py), [AskSupportAgentErrorBody](firecrawl/errors/ask_support_agent_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SupportAskResponse](firecrawl_api/models/support_ask_response.py)</code> -- Support agent answer
+**On `Success`**: `payload` is <code>[SupportAskResponse](firecrawl/models/support_ask_response.py)</code> -- Support agent answer
 
-**On `Failure`**: `error` is <code>[AskSupportAgentErrorBody](firecrawl_api/errors/ask_support_agent_error.py)</code>
+**On `Failure`**: `error` is <code>[AskSupportAgentErrorBody](firecrawl/errors/ask_support_agent_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 503, 504 | <code>[SupportProxyErrorResponse](firecrawl_api/models/support_proxy_error_response.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 400, 401, 503, 504 | <code>[SupportProxyErrorResponse](firecrawl/models/support_proxy_error_response.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4310,8 +4310,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[SupportDocsSearchRequest](firecrawl_api/models/support_docs_search_request.py) \| [SupportDocsSearchRequestDict](firecrawl_api/models/support_docs_search_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[SupportDocsSearchRequest](firecrawl/models/support_docs_search_request.py) \| [SupportDocsSearchRequestDict](firecrawl/models/support_docs_search_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4321,18 +4321,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[SupportDocsSearchResponse](firecrawl_api/models/support_docs_search_response.py), [SearchSupportDocsErrorBody](firecrawl_api/errors/search_support_docs_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[SupportDocsSearchResponse](firecrawl/models/support_docs_search_response.py), [SearchSupportDocsErrorBody](firecrawl/errors/search_support_docs_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[SupportDocsSearchResponse](firecrawl_api/models/support_docs_search_response.py)</code> -- Docs-grounded answer
+**On `Success`**: `payload` is <code>[SupportDocsSearchResponse](firecrawl/models/support_docs_search_response.py)</code> -- Docs-grounded answer
 
-**On `Failure`**: `error` is <code>[SearchSupportDocsErrorBody](firecrawl_api/errors/search_support_docs_error.py)</code>
+**On `Failure`**: `error` is <code>[SearchSupportDocsErrorBody](firecrawl/errors/search_support_docs_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 401, 503, 504 | <code>[SupportProxyErrorResponse](firecrawl_api/models/support_proxy_error_response.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 400, 401, 503, 504 | <code>[SupportProxyErrorResponse](firecrawl/models/support_proxy_error_response.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4344,7 +4344,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 
 ## ThreatProtection
 
-> Source: [ThreatProtection](firecrawl_api/apis/threat_protection.py)
+> Source: [ThreatProtection](firecrawl/apis/threat_protection.py)
 
 <details>
 <summary><code>def get_threat_protection(*, request_options: RequestOptionsOrDict | None = None) -> ApiResult[TeamThreatProtectionResponse, GetThreatProtectionErrorBody]</code></summary>
@@ -4399,7 +4399,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4409,18 +4409,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[TeamThreatProtectionResponse](firecrawl_api/models/team_threat_protection_response.py), [GetThreatProtectionErrorBody](firecrawl_api/errors/get_threat_protection_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[TeamThreatProtectionResponse](firecrawl/models/team_threat_protection_response.py), [GetThreatProtectionErrorBody](firecrawl/errors/get_threat_protection_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TeamThreatProtectionResponse](firecrawl_api/models/team_threat_protection_response.py)</code> -- Effective threat protection policy for the team's organization.
+**On `Success`**: `payload` is <code>[TeamThreatProtectionResponse](firecrawl/models/team_threat_protection_response.py)</code> -- Effective threat protection policy for the team's organization.
 
-**On `Failure`**: `error` is <code>[GetThreatProtectionErrorBody](firecrawl_api/errors/get_threat_protection_error.py)</code>
+**On `Failure`**: `error` is <code>[GetThreatProtectionErrorBody](firecrawl/errors/get_threat_protection_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 403 | <code>[RawError](firecrawl_api/core/results.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 403 | <code>[RawError](firecrawl/core/results.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>
@@ -4483,8 +4483,8 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>body</code> | <code>[TeamThreatProtectionRequest](firecrawl_api/models/team_threat_protection_request.py) \| [TeamThreatProtectionRequestDict](firecrawl_api/models/team_threat_protection_request.py)</code> | The request body. |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl_api/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>body</code> | <code>[TeamThreatProtectionRequest](firecrawl/models/team_threat_protection_request.py) \| [TeamThreatProtectionRequestDict](firecrawl/models/team_threat_protection_request.py)</code> | The request body. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](firecrawl/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
 
 </dd>
 </dl>
@@ -4494,18 +4494,18 @@ match result:
 <dl>
 <dd>
 
-**Returns**: <code>[ApiResult](firecrawl_api/core/results.py)&#91;[TeamThreatProtectionResponse](firecrawl_api/models/team_threat_protection_response.py), [UpdateThreatProtectionErrorBody](firecrawl_api/errors/update_threat_protection_error.py)&#93;</code>
+**Returns**: <code>[ApiResult](firecrawl/core/results.py)&#91;[TeamThreatProtectionResponse](firecrawl/models/team_threat_protection_response.py), [UpdateThreatProtectionErrorBody](firecrawl/errors/update_threat_protection_error.py)&#93;</code>
 
-**On `Success`**: `payload` is <code>[TeamThreatProtectionResponse](firecrawl_api/models/team_threat_protection_response.py)</code> -- Effective threat protection policy for the team's organization.
+**On `Success`**: `payload` is <code>[TeamThreatProtectionResponse](firecrawl/models/team_threat_protection_response.py)</code> -- Effective threat protection policy for the team's organization.
 
-**On `Failure`**: `error` is <code>[UpdateThreatProtectionErrorBody](firecrawl_api/errors/update_threat_protection_error.py)</code>
+**On `Failure`**: `error` is <code>[UpdateThreatProtectionErrorBody](firecrawl/errors/update_threat_protection_error.py)</code>
 
 Mapped in first-match order -- an earlier row wins over a later range that also covers the status:
 
 | Status | `error` is |
 | --- | --- |
-| 400, 403 | <code>[RawError](firecrawl_api/core/results.py)</code> |
-| anything unmapped | <code>[RawError](firecrawl_api/core/results.py)</code> |
+| 400, 403 | <code>[RawError](firecrawl/core/results.py)</code> |
+| anything unmapped | <code>[RawError](firecrawl/core/results.py)</code> |
 
 </dd>
 </dl>

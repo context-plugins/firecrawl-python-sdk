@@ -1,5 +1,5 @@
 [project]
-name = "firecrawl-api"
+name = "firecrawl"
 version = "v2"
 description = "API for interacting with Firecrawl services to perform web scraping and crawling tasks."
 authors = [
@@ -81,7 +81,7 @@ ignore = [
 
 [tool.mypy]
 python_version = "3.10"         # the supported floor, not whichever interpreter is local
-files = ["firecrawl_api"]
+files = ["firecrawl"]
 strict = true
 warn_unreachable = true
 enable_error_code = ["redundant-expr", "truthy-bool", "ignore-without-code", "possibly-undefined"]

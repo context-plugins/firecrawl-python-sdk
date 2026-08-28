@@ -1,8 +1,8 @@
-# Firecrawl API SDK
+# Firecrawl SDK
 
 [![Built with APIMatic][apimatic-badge]][apimatic-url] [![License: MIT][license-badge]][license-url] [![Python 3.10+][python-badge]][python-url]
 
-The Firecrawl API SDK for Python provides access to the Firecrawl API REST APIs from Python applications.
+The Firecrawl SDK for Python provides access to the Firecrawl REST APIs from Python applications.
 
 > [!TIP]
 > **Looking for a specific signature, model, enum, or error type?** This SDK ships a generated
@@ -18,15 +18,15 @@ API for interacting with Firecrawl services to perform web scraping and crawling
 Install the Python SDK from PyPI, with whichever package manager your project uses:
 
 ```bash
-pip install firecrawl-api
+pip install firecrawl
 ```
 
 ```bash
-uv add firecrawl-api
+uv add firecrawl
 ```
 
 ```bash
-poetry add firecrawl-api
+poetry add firecrawl
 ```
 
 ---
@@ -35,36 +35,36 @@ poetry add firecrawl-api
 
 ### Synchronous client
 
-Construct `FirecrawlApiClient` with keyword arguments, and call `close()` when you are done. Every argument is optional; the full list is in the [SDK map](sdk-map.md).
+Construct `FirecrawlClient` with keyword arguments, and call `close()` when you are done. Every argument is optional; the full list is in the [SDK map](sdk-map.md).
 
 ```python
-from firecrawl_api import FirecrawlApiClient
+from firecrawl import FirecrawlClient
 
-client = FirecrawlApiClient(bearer_auth="YOUR_BEARER_TOKEN")
+client = FirecrawlClient(bearer_auth="YOUR_BEARER_TOKEN")
 
 # TODO: call endpoints here -- see api-reference.md
 
 client.close()
 ```
 
-Alternatively, scope it -- `with FirecrawlApiClient(...) as client:` closes the pool on exit; see [Best Practices](#best-practices).
+Alternatively, scope it -- `with FirecrawlClient(...) as client:` closes the pool on exit; see [Best Practices](#best-practices).
 
-`Client` is exported as an alias of `FirecrawlApiClient`, so `from firecrawl_api import Client` also works.
+`Client` is exported as an alias of `FirecrawlClient`, so `from firecrawl import Client` also works.
 
 The SDK accepts every model-typed input in two interchangeable spellings, both type-checked: the typed model, or a plain dict with the same keys -- the `OrDict` and `Model | ModelDict` unions in the [SDK map](sdk-map.md). Pick whichever suits the call site: the dict form needs no import, while the model form adds a keyword-checked constructor and editor completion.
 
 ### Asynchronous client
 
-`AsyncFirecrawlApiClient` mirrors `FirecrawlApiClient` with **identical method names**, and every endpoint method is a coroutine. It takes the same arguments, with some differences -- for example, the transport argument is `custom_async_http_client`.
+`AsyncFirecrawlClient` mirrors `FirecrawlClient` with **identical method names**, and every endpoint method is a coroutine. It takes the same arguments, with some differences -- for example, the transport argument is `custom_async_http_client`.
 
 ```python
 from asyncio import run
 
-from firecrawl_api import AsyncFirecrawlApiClient
+from firecrawl import AsyncFirecrawlClient
 
 
 async def main() -> None:
-    client = AsyncFirecrawlApiClient(bearer_auth="YOUR_BEARER_TOKEN")
+    client = AsyncFirecrawlClient(bearer_auth="YOUR_BEARER_TOKEN")
     # TODO: call endpoints here, awaiting each -- see api-reference.md
     await client.aclose()
 
@@ -72,7 +72,7 @@ async def main() -> None:
 run(main())
 ```
 
-Alternatively, scope it -- `async with AsyncFirecrawlApiClient(...) as client:` closes the pool on exit. Only the async spelling is `aclose`, matching httpx; see [Best Practices](#best-practices).
+Alternatively, scope it -- `async with AsyncFirecrawlClient(...) as client:` closes the pool on exit. Only the async spelling is `aclose`, matching httpx; see [Best Practices](#best-practices).
 
 `AsyncClient` is the exported alias. Each client accepts **only** its own transport argument; passing the other's is a `TypeError` at runtime and an error under mypy.
 
@@ -98,11 +98,11 @@ Consult the map before scanning or grepping the source: it answers call-level co
 ## Best Practices
 
 > [!TIP]
-> Use a **single `FirecrawlApiClient` instance** for the lifetime of your application and reuse it across
+> Use a **single `FirecrawlClient` instance** for the lifetime of your application and reuse it across
 > all requests. Each instance owns its own connection pool, so an instance per request forfeits
 > connection reuse and leaks pools that are never closed.
 
-Match the disposal to the client's lifetime: an application-lifetime client is closed once at shutdown with `close()` / `aclose()`; where the lifetime fits a block, `with FirecrawlApiClient() as client:` / `async with AsyncFirecrawlApiClient() as client:` releases it automatically. Both are idempotent, but a closed client is not reusable: the next call raises. The client closes **whatever transport it holds**, including one you supplied via `custom_http_client` / `custom_async_http_client`; if you intend to reuse your own transport across clients, don't hand its lifetime to a `with` block.
+Match the disposal to the client's lifetime: an application-lifetime client is closed once at shutdown with `close()` / `aclose()`; where the lifetime fits a block, `with FirecrawlClient() as client:` / `async with AsyncFirecrawlClient() as client:` releases it automatically. Both are idempotent, but a closed client is not reusable: the next call raises. The client closes **whatever transport it holds**, including one you supplied via `custom_http_client` / `custom_async_http_client`; if you intend to reuse your own transport across clients, don't hand its lifetime to a `with` block.
 
 ## License
 

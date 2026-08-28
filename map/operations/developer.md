@@ -2,7 +2,7 @@
 
 # Developer — operations
 
-Accessor: `client.developer` · Source: `firecrawl_api/apis/developer.py` · 2 operations
+Accessor: `client.developer` · Source: `firecrawl/apis/developer.py` · 2 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -19,10 +19,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Types1OrStr` | `firecrawl_api/models/enums/types1.py` |
-| `SkillsOrStr` | `firecrawl_api/models/enums/skills.py` |
-| `DeveloperSearchResponse` | `firecrawl_api/models/developer_search_response.py` |
-| `DeveloperSearchErrorBody` | `firecrawl_api/errors/developer_search_error.py` |
+| `Types1OrStr` | `firecrawl/models/enums/types1.py` |
+| `SkillsOrStr` | `firecrawl/models/enums/skills.py` |
+| `DeveloperSearchResponse` | `firecrawl/models/developer_search_response.py` |
+| `DeveloperSearchErrorBody` | `firecrawl/errors/developer_search_error.py` |
 
 ### client.developer.developer_search_post
 
@@ -37,8 +37,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SearchDeveloperRequest` | `firecrawl_api/models/search_developer_request.py` |
-| `SearchDeveloperRequestDict` | `firecrawl_api/models/search_developer_request.py` |
-| `DeveloperSearchResponse` | `firecrawl_api/models/developer_search_response.py` |
-| `DeveloperSearchPostErrorBody` | `firecrawl_api/errors/developer_search_post_error.py` |
+| `SearchDeveloperRequest` | `firecrawl/models/search_developer_request.py` |
+| `SearchDeveloperRequestDict` | `firecrawl/models/search_developer_request.py` |
+| `DeveloperSearchResponse` | `firecrawl/models/developer_search_response.py` |
+| `DeveloperSearchPostErrorBody` | `firecrawl/errors/developer_search_post_error.py` |
 

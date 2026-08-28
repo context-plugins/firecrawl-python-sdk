@@ -2,7 +2,7 @@
 
 # Billing — operations
 
-Accessor: `client.billing` · Source: `firecrawl_api/apis/billing.py` · 4 operations
+Accessor: `client.billing` · Source: `firecrawl/apis/billing.py` · 4 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -17,10 +17,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TeamCreditUsageResponse` | `firecrawl_api/models/team_credit_usage_response.py` |
-| `GetCreditUsageErrorBody` | `firecrawl_api/errors/get_credit_usage_error.py` |
-| `TeamCreditUsage404Error1` | `firecrawl_api/models/team_credit_usage404_error1.py` |
-| `TeamCreditUsage500Error1` | `firecrawl_api/models/team_credit_usage500_error1.py` |
+| `TeamCreditUsageResponse` | `firecrawl/models/team_credit_usage_response.py` |
+| `GetCreditUsageErrorBody` | `firecrawl/errors/get_credit_usage_error.py` |
+| `TeamCreditUsage404Error1` | `firecrawl/models/team_credit_usage404_error1.py` |
+| `TeamCreditUsage500Error1` | `firecrawl/models/team_credit_usage500_error1.py` |
 
 ### client.billing.get_historical_credit_usage
 
@@ -34,9 +34,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TeamCreditUsageHistoricalResponse` | `firecrawl_api/models/team_credit_usage_historical_response.py` |
-| `GetHistoricalCreditUsageErrorBody` | `firecrawl_api/errors/get_historical_credit_usage_error.py` |
-| `TeamCreditUsageHistorical500Error1` | `firecrawl_api/models/team_credit_usage_historical500_error1.py` |
+| `TeamCreditUsageHistoricalResponse` | `firecrawl/models/team_credit_usage_historical_response.py` |
+| `GetHistoricalCreditUsageErrorBody` | `firecrawl/errors/get_historical_credit_usage_error.py` |
+| `TeamCreditUsageHistorical500Error1` | `firecrawl/models/team_credit_usage_historical500_error1.py` |
 
 ### client.billing.get_historical_token_usage
 
@@ -50,9 +50,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TeamTokenUsageHistoricalResponse` | `firecrawl_api/models/team_token_usage_historical_response.py` |
-| `GetHistoricalTokenUsageErrorBody` | `firecrawl_api/errors/get_historical_token_usage_error.py` |
-| `TeamTokenUsageHistorical500Error1` | `firecrawl_api/models/team_token_usage_historical500_error1.py` |
+| `TeamTokenUsageHistoricalResponse` | `firecrawl/models/team_token_usage_historical_response.py` |
+| `GetHistoricalTokenUsageErrorBody` | `firecrawl/errors/get_historical_token_usage_error.py` |
+| `TeamTokenUsageHistorical500Error1` | `firecrawl/models/team_token_usage_historical500_error1.py` |
 
 ### client.billing.get_token_usage
 
@@ -65,8 +65,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `TeamTokenUsageResponse` | `firecrawl_api/models/team_token_usage_response.py` |
-| `GetTokenUsageErrorBody` | `firecrawl_api/errors/get_token_usage_error.py` |
-| `TeamTokenUsage404Error1` | `firecrawl_api/models/team_token_usage404_error1.py` |
-| `TeamTokenUsage500Error1` | `firecrawl_api/models/team_token_usage500_error1.py` |
+| `TeamTokenUsageResponse` | `firecrawl/models/team_token_usage_response.py` |
+| `GetTokenUsageErrorBody` | `firecrawl/errors/get_token_usage_error.py` |
+| `TeamTokenUsage404Error1` | `firecrawl/models/team_token_usage404_error1.py` |
+| `TeamTokenUsage500Error1` | `firecrawl/models/team_token_usage500_error1.py` |
 

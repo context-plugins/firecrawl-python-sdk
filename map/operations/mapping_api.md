@@ -2,7 +2,7 @@
 
 # MappingApi — operations
 
-Accessor: `client.mapping_api` · Source: `firecrawl_api/apis/mapping_api.py` · 1 operation
+Accessor: `client.mapping_api` · Source: `firecrawl/apis/mapping_api.py` · 1 operation
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -19,11 +19,11 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `MapRequest` | `firecrawl_api/models/map_request.py` |
-| `MapRequestDict` | `firecrawl_api/models/map_request.py` |
-| `MapResponse` | `firecrawl_api/models/map_response.py` |
-| `MapUrlsErrorBody` | `firecrawl_api/errors/map_urls_error.py` |
-| `Map402Error1` | `firecrawl_api/models/map402_error1.py` |
-| `Map429Error1` | `firecrawl_api/models/map429_error1.py` |
-| `Map500Error1` | `firecrawl_api/models/map500_error1.py` |
+| `MapRequest` | `firecrawl/models/map_request.py` |
+| `MapRequestDict` | `firecrawl/models/map_request.py` |
+| `MapResponse` | `firecrawl/models/map_response.py` |
+| `MapUrlsErrorBody` | `firecrawl/errors/map_urls_error.py` |
+| `Map402Error1` | `firecrawl/models/map402_error1.py` |
+| `Map429Error1` | `firecrawl/models/map429_error1.py` |
+| `Map500Error1` | `firecrawl/models/map500_error1.py` |
 

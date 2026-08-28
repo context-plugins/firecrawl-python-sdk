@@ -2,7 +2,7 @@
 
 # ResearchApi — operations
 
-Accessor: `client.research_api` · Source: `firecrawl_api/apis/research_api.py` · 3 operations
+Accessor: `client.research_api` · Source: `firecrawl/apis/research_api.py` · 3 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -19,8 +19,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SearchResearchPapersResponse` | `firecrawl_api/models/unions/search_research_papers_response.py` |
-| `ResearchGetPaperErrorBody` | `firecrawl_api/errors/research_get_paper_error.py` |
+| `SearchResearchPapersResponse` | `firecrawl/models/unions/search_research_papers_response.py` |
+| `ResearchGetPaperErrorBody` | `firecrawl/errors/research_get_paper_error.py` |
 
 ### client.research_api.research_related_papers
 
@@ -35,9 +35,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Mode5OrStr` | `firecrawl_api/models/enums/mode5.py` |
-| `ResearchSimilarPapersResponse` | `firecrawl_api/models/research_similar_papers_response.py` |
-| `ResearchRelatedPapersErrorBody` | `firecrawl_api/errors/research_related_papers_error.py` |
+| `Mode5OrStr` | `firecrawl/models/enums/mode5.py` |
+| `ResearchSimilarPapersResponse` | `firecrawl/models/research_similar_papers_response.py` |
+| `ResearchRelatedPapersErrorBody` | `firecrawl/errors/research_related_papers_error.py` |
 
 ### client.research_api.research_search_papers
 
@@ -52,6 +52,6 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ResearchSearchPapersResponse` | `firecrawl_api/models/research_search_papers_response.py` |
-| `ResearchSearchPapersErrorBody` | `firecrawl_api/errors/research_search_papers_error.py` |
+| `ResearchSearchPapersResponse` | `firecrawl/models/research_search_papers_response.py` |
+| `ResearchSearchPapersErrorBody` | `firecrawl/errors/research_search_papers_error.py` |
 
