@@ -1,0 +1,10 @@
+from __future__ import annotations
+
+from typing import TypeAlias
+
+from ..research_paper_metadata_response import ResearchPaperMetadataResponse, ResearchPaperMetadataResponseDict
+from ..research_read_paper_response import ResearchReadPaperResponse, ResearchReadPaperResponseDict
+
+SearchResearchPapersResponse: TypeAlias = ResearchPaperMetadataResponse | ResearchReadPaperResponse
+
+SearchResearchPapersResponseDict: TypeAlias = ResearchPaperMetadataResponseDict | ResearchReadPaperResponseDict
