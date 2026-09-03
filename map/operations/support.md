@@ -2,13 +2,14 @@
 
 # Support — operations
 
-Accessor: `client.support` · Source: `firecrawl/apis/support.py` · 2 operations
+Accessor: `client.support` · Source: `firecrawl_api/apis/support.py` · 2 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
 ### client.support.ask_support_agent
 
 - **Route**: `POST /support/ask`
+- **Auth**: `bearer_auth`
 - **Signature**: `def ask_support_agent(body: SupportAskRequest | SupportAskRequestDict, *, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `body`
 - **Params**: `body` — JSON body
@@ -19,15 +20,16 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SupportAskRequest` | `firecrawl/models/support_ask_request.py` |
-| `SupportAskRequestDict` | `firecrawl/models/support_ask_request.py` |
-| `SupportAskResponse` | `firecrawl/models/support_ask_response.py` |
-| `AskSupportAgentErrorBody` | `firecrawl/errors/ask_support_agent_error.py` |
-| `SupportProxyErrorResponse` | `firecrawl/models/support_proxy_error_response.py` |
+| `SupportAskRequest` | `firecrawl_api/models/support_ask_request.py` |
+| `SupportAskRequestDict` | `firecrawl_api/models/support_ask_request.py` |
+| `SupportAskResponse` | `firecrawl_api/models/support_ask_response.py` |
+| `AskSupportAgentErrorBody` | `firecrawl_api/errors/ask_support_agent_error.py` |
+| `SupportProxyErrorResponse` | `firecrawl_api/models/support_proxy_error_response.py` |
 
 ### client.support.search_support_docs
 
 - **Route**: `POST /support/docs-search`
+- **Auth**: `bearer_auth`
 - **Signature**: `def search_support_docs(body: SupportDocsSearchRequest | SupportDocsSearchRequestDict, *, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `body`
 - **Params**: `body` — JSON body
@@ -38,9 +40,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `SupportDocsSearchRequest` | `firecrawl/models/support_docs_search_request.py` |
-| `SupportDocsSearchRequestDict` | `firecrawl/models/support_docs_search_request.py` |
-| `SupportDocsSearchResponse` | `firecrawl/models/support_docs_search_response.py` |
-| `SearchSupportDocsErrorBody` | `firecrawl/errors/search_support_docs_error.py` |
-| `SupportProxyErrorResponse` | `firecrawl/models/support_proxy_error_response.py` |
+| `SupportDocsSearchRequest` | `firecrawl_api/models/support_docs_search_request.py` |
+| `SupportDocsSearchRequestDict` | `firecrawl_api/models/support_docs_search_request.py` |
+| `SupportDocsSearchResponse` | `firecrawl_api/models/support_docs_search_response.py` |
+| `SearchSupportDocsErrorBody` | `firecrawl_api/errors/search_support_docs_error.py` |
+| `SupportProxyErrorResponse` | `firecrawl_api/models/support_proxy_error_response.py` |
 
